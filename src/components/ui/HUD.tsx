@@ -47,7 +47,7 @@ export default function HUD() {
         <div className="hidden md:flex gap-8 items-end">
           <span>WB: 5600K</span>
           <span onClick={handleThemeSwitch} className="cursor-pointer hover:text-accent transition-colors pointer-events-auto" title="Switch Theme">ND: {themes[themeIndex].label}</span>
-          <span>CH-01 // AMAR</span>
+          <span>CH-01 // ANJIMA</span>
         </div>
       </div>
 

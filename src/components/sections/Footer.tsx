@@ -75,14 +75,14 @@ export default function Footer() {
         
         <div className="md:text-right flex flex-col justify-between md:pr-40 relative z-30">
           <div>
-            <div className="opacity-50 mb-4">Amar //</div>
+            <div className="opacity-50 mb-4">Anjima Raj //</div>
             <div className="opacity-40 leading-relaxed normal-case text-xs">
               Marketing · Media · Creativity<br/>
               Helping brands communicate better.
             </div>
           </div>
           <div className="mt-8 flex flex-col md:items-end gap-2">
-            <div className="opacity-30">© {new Date().getFullYear()} Amar. All rights reserved.</div>
+            <div className="opacity-30">© {new Date().getFullYear()} Anjima Raj. All rights reserved.</div>
             <div className="flex items-center gap-4 opacity-40">
               <Link href="/legal/privacy" className="hover:text-accent hover:opacity-100 transition-colors  normal-case">Privacy Policy</Link>
               <span>/</span>

@@ -6,19 +6,19 @@ import DecryptText from "@/components/ui/DecryptText";
 
 const testimonials = [
   {
-    quote: "Amar has a rare ability to combine strategic thinking with creative execution. She doesn't just create content — she builds narratives that genuinely connect with audiences.",
+    quote: "Anjima Raj has a rare ability to combine strategic thinking with creative execution. She doesn't just create content — she builds narratives that genuinely connect with audiences.",
     name: "[PLACEHOLDER: CLIENT NAME]",
     role: "[PLACEHOLDER: ROLE]",
     org: "[PLACEHOLDER: ORGANISATION]",
   },
   {
-    quote: "Working with Amar transformed how we communicated our brand online. Her understanding of digital platforms and audience psychology is exceptional.",
+    quote: "Working with Anjima Raj transformed how we communicated our brand online. Her understanding of digital platforms and audience psychology is exceptional.",
     name: "[PLACEHOLDER: CLIENT NAME]",
     role: "[PLACEHOLDER: ROLE]",
     org: "[PLACEHOLDER: ORGANISATION]",
   },
   {
-    quote: "The level of professionalism and creative vision Amar brings to every project is outstanding. She elevated our entire marketing presence.",
+    quote: "The level of professionalism and creative vision Anjima Raj brings to every project is outstanding. She elevated our entire marketing presence.",
     name: "[PLACEHOLDER: CLIENT NAME]",
     role: "[PLACEHOLDER: ROLE]",
     org: "[PLACEHOLDER: ORGANISATION]",
