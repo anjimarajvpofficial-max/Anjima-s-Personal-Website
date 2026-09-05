@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anjima Raj - Marketing, Media, Creativity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-bright": "#39393b",
+                "surface-variant": "#353437",
+                "on-error": "#690005",
+                "on-background": "#e5e1e4",
+                "tertiary-fixed-dim": "#c8c5cb",
+                "primary-fixed-dim": "#d4c5a5",
+                "secondary-fixed": "#e4e2dd",
+                "on-primary-container": "#544931",
+                "surface-container-highest": "#353437",
+                "tertiary": "#d7d5da",
+                "on-surface-variant": "#cdc5b9",
+                "background": "#f8f9fa",
+                "on-secondary-fixed": "#1b1c19",
+                "on-primary-fixed-variant": "#50462e",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#221b06",
+                "on-tertiary-container": "#4a4a4e",
+                "primary-container": "#c8b99a",
+                "on-primary": "#392f19",
+                "surface-container-high": "#e9ecef",
+                "primary-fixed": "#f1e1c0",
+                "on-tertiary-fixed": "#1b1b1f",
+                "surface-dim": "#e9ecef",
+                "on-tertiary-fixed-variant": "#47464b",
+                "outline-variant": "#dee2e6",
+                "inverse-surface": "#212529",
+                "inverse-primary": "#695d43",
+                "on-secondary-container": "#b9b8b4",
+                "tertiary-container": "#bbb9bf",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#e4e1e7",
+                "error-container": "#93000a",
+                "secondary-container": "#494946",
+                "surface-tint": "#d4c5a5",
+                "primary": "#3366cc",
+                "surface-container": "#f8f9fa",
+                "error": "#ffb4ab",
+                "outline": "#ced4da",
+                "inverse-on-surface": "#f8f9fa",
+                "on-surface": "#212529",
+                "secondary-fixed-dim": "#c8c6c2",
+                "on-secondary-fixed-variant": "#474744",
+                "on-tertiary": "#303034",
+                "on-secondary": "#30312e",
+                "surface-container-low": "#f1f3f5",
+                "secondary": "#c8c6c2",
+                "surface": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "1.5rem",
+                "xl": "2rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-md": "1.5rem",
+                "section-gap": "clamp(6rem, 10vh, 10rem)",
+                "margin-page": "max(2rem, 5vw)",
+                "gutter-grid": "2rem",
+                "stack-lg": "3rem",
+                "stack-sm": "0.75rem"
+        },
+        "fontFamily": {
+                "display-hero": [
+                        "Noto Serif", "serif"
+                ],
+                "label-md": [
+                        "Noto Serif", "serif"
+                ],
+                "section-header": [
+                        "Noto Serif", "serif"
+                ],
+                "body-lg": [
+                        "Noto Serif", "serif"
+                ],
+                "headline-lg": [
+                        "Noto Serif", "serif"
+                ],
+                "body-md": [
+                        "Noto Serif", "serif"
+                ],
+                "headline-lg-mobile": [
+                        "Noto Serif", "serif"
+                ]
+        },
+        "fontSize": {
+                "display-hero": [
+                        "clamp(4rem, 8vw, 9rem)",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "0.875rem",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "section-header": [
+                        "0.875rem",
+                        {
+                                "lineHeight": "1.2rem",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "1.25rem",
+                        {
+                                "lineHeight": "1.7",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "3.5rem",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "1rem",
+                        {
+                                "lineHeight": "1.7",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "2.25rem",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            overflow-x: hidden;
+        }
+
+        .reveal-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hover-scale {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .group:hover .hover-scale {
+            transform: scale(1.05);
+        }
+        
+        .nav-item-active {
+            position: relative;
+        }
+        
+        .nav-item-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: theme('colors.primary');
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-margin-page py-6">
+<a aria-label="Home" href="#">
+<img alt="Anjima Raj Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLtMYh9r9T83BgC2sDkFbUao_0gOx5egAekknyHaN5XSqen6gQTnGOZXc0zWvJULcfU_WBbCN2xvWrIjzMCWZopEYPJnJw5hBGd4t52fRhrFvv8rkzdBCLvRxzDOqre0fv8aRh6cSb9N8PzshC96TziGb2AZrQAOBI3Y91i5RM9hUVie1NI8GXwJnfFwcb5JwC8wuTs2zOm-gGESdoNezY3h0zd5aMZd6Jy9DYKaNcbdiYAtYoXgqGlhFCAo"/>
+</a>
+<!-- Desktop Nav -->
+<ul class="hidden md:flex items-center gap-8">
+<li class="">
+<a class="font-label-md text-label-md text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-primary cursor-pointer transition-all duration-300 active:scale-95" href="#">Home</a>
+</li>
+<li class="">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95" href="#">Work</a>
+</li>
+<li class="">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95" href="#">Services</a>
+</li>
+<li class="">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95" href="#">About</a>
+</li>
+<li class="">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95" href="#">Insights</a>
+</li>
+<li class="">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95" href="#">Contact</a>
+</li>
+</ul>
+<div class="hidden md:block">
+<button class="bg-primary text-white rounded-full font-label-md text-label-md px-6 py-3 font-semibold hover:opacity-90 transition-opacity duration-300">
+                LET'S WORK TOGETHER
+            </button>
+</div>
+<!-- Mobile Menu Button (simplified for layout) -->
+<button aria-label="Open menu" class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<header class="min-h-screen pt-32 pb-section-gap px-margin-page flex flex-col justify-center relative bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center h-full">
+<div class="md:col-span-8 z-10">
+<h1 class="font-display-hero text-display-hero text-on-surface mb-stack-md leading-tight">
+                    ANJIMA<br/>RAJ
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface max-w-xl mb-stack-lg italic text-opacity-80">
+                    Marketing · Media · Creativity
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white rounded-full font-label-md text-label-md px-8 py-4 font-semibold hover:bg-opacity-90 transition-colors duration-300">
+                        LET'S WORK TOGETHER
+                    </button>
+<button class="bg-transparent border border-outline text-on-surface rounded-full font-label-md text-label-md px-8 py-4 font-semibold hover:bg-surface-container transition-colors duration-300">
+                        DOWNLOAD CV
+                    </button>
+</div>
+</div>
+<div class="md:col-span-4 mt-stack-lg md:mt-0 relative aspect-[3/4] overflow-hidden rounded-xl group border border-outline-variant/50">
+<img alt="Professional portrait of Anjima Raj" class="w-full h-full object-cover hover-scale" data-alt="A high-end, cinematic professional portrait of a woman of Indian descent, styled in modern minimal editorial fashion. The lighting is dramatic and low-key, utilizing deep charcoal shadows and warm champagne highlights. The background is a stark, textured dark surface, emphasizing a gallery-like prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmMvpJv8jnFpDO4Rsp2BTSuvFmjWBipoYLDXBufVgi0WVrNj0SPLpDJRlmzWjVLyE7ZmUp0lrlrKrjOFEy0abNeBrEFUg_3UDM_rGxJFTkKzQkPb80qviFymukFrjSBHaW287Z9vDZDrlVMf-EZoogn5j4RXeyiPf5Io6Wz1wwBFSV3DIziPAjfvEkYYI577CdFoHrj9IgUu08bvWeP4A-Ej1_JeDywD3AsnT-Ve_J2R6fpMj9RZezbw"/>
+<div class="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
+</div>
+</div>
+</header>
+<!-- Brand Statement -->
+<section class="py-section-gap px-margin-page bg-surface-container-low border-t border-b border-outline-variant/30 flex items-center justify-center min-h-[512px]">
+<div class="max-w-5xl mx-auto text-center reveal-text">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-normal">
+                I HELP BRANDS <br class="hidden md:block"/>COMMUNICATE BETTER.
+            </h2>
+</div>
+</section>
+<!-- Selected Work -->
+<section class="py-section-gap px-margin-page bg-surface-container-lowest">
+<div class="flex justify-between items-end mb-stack-lg border-b border-outline-variant/50 pb-4">
+<h3 class="font-section-header text-section-header text-on-surface uppercase tracking-widest">Selected Work</h3>
+<a class="font-label-md text-label-md text-primary hover:opacity-80 transition-opacity" href="#">View All Projects</a>
+</div>
+<div class="grid grid-cols-1 gap-section-gap">
+<!-- Project 1 -->
+<article class="group cursor-pointer">
+<div class="w-full aspect-video md:aspect-[21/9] overflow-hidden relative mb-stack-md rounded-xl border border-outline-variant/50 group-hover:border-primary/50 transition-colors duration-300">
+<img alt="Cinematic photograph of a modern tech product launch event for Global Campaign" class="w-full h-full object-cover hover-scale" data-alt="A sweeping, full-bleed cinematic photograph of a modern tech product launch event. The scene is illuminated by dramatic stage lighting in deep blacks and warm champagne tones, conveying a high-end, editorial atmosphere. Extensive negative space frames the central subject, reflecting a minimalist and precise design ethos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPOBRB28vQ2labc4okcfsAQSQZJrt6MfnDQO0cKh7WHBn-DiwqR7mPZtg8NzjCBMEGCkQYiX0Cor8_4GL2zySKYyz2hyp7nZGKygVTijNZNZItkyOJyPdMN2sZDTJihG-zTj-j7BXVoidYXYL_vsKvMjhHPgWEgx2NuKQkTAl4G6Z4uc4J3yVh9lwQhWyEvvuy_DxJRuUWILP1tJdv2Aii1qpJ4xyNJNNDYA5j9t73Z3nYHb6zyVhPKA"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-8">
+<h4 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface group-hover:text-primary transition-colors">
+                            [PLACEHOLDER: CLIENT] Global Campaign
+                        </h4>
+</div>
+<div class="md:col-span-4 md:text-right flex flex-col justify-end">
+<p class="font-label-md text-label-md text-on-surface mb-2 opacity-70">2023</p>
+<p class="font-body-md text-body-md text-on-surface italic opacity-80">Marketing Strategy, Art Direction</p>
+</div>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="group cursor-pointer">
+<div class="w-full aspect-video md:aspect-[21/9] overflow-hidden relative mb-stack-md rounded-xl border border-outline-variant/50 group-hover:border-primary/50 transition-colors duration-300">
+<img alt="Luxury beauty products flat lay for Rebrand project" class="w-full h-full object-cover hover-scale" data-alt="A moody, high-contrast flat lay of luxury beauty products on a textured charcoal slate. The composition is strictly aligned and asymmetrical, using heavy negative space. Lighting highlights the metallic champagne accents of the packaging, creating a gallery-like, prestigious visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLDFqV1jtx4AZp0n19qew4g9Fiy1MVnesym6qxwyLcZlxvD7sW61MyBdgE13wGY35dYT5F_Sqb_UeXIknpP9G4E7TqGVjCURuUXy-54K6LT2vSWq_h5GTSaaYzJ21j9s-UNKkDEjD7BICe1PkxC3OaTtJHIN2uZkY8BQ5HmlVOmuO7sCsKqeljBH_LQRTmXqHwAkzT16WHleW7X2nYj8j3-1jFMm5kzMC8dxZQOer1Yv6R5ibO7wgaZQ"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-8">
+<h4 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface group-hover:text-primary transition-colors">
+                            [PLACEHOLDER: CLIENT] Rebrand
+                        </h4>
+</div>
+<div class="md:col-span-4 md:text-right flex flex-col justify-end">
+<p class="font-label-md text-label-md text-on-surface mb-2 opacity-70">2022</p>
+<p class="font-body-md text-body-md text-on-surface italic opacity-80">Brand Identity, Media Planning</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Services -->
+<section class="py-section-gap px-margin-page bg-surface-container-low">
+<h3 class="font-section-header text-section-header text-on-surface uppercase tracking-widest mb-stack-lg border-b border-outline-variant/50 pb-4">Core Offerings</h3>
+<div class="flex flex-col">
+<div class="group py-8 border-b border-outline-variant/50 flex items-start gap-8 hover:bg-surface transition-colors duration-300 rounded-xl px-4 -mx-4">
+<span aria-hidden="true" class="font-label-md text-4xl text-outline font-bold w-16">01</span>
+<div class="flex-1">
+<h4 class="font-headline-lg text-3xl text-on-surface mb-4 group-hover:text-primary transition-colors">Marketing Strategy</h4>
+<p class="font-body-md text-body-md text-on-surface max-w-2xl opacity-80 leading-relaxed">Comprehensive go-to-market plans designed to elevate brand positioning and drive measurable engagement.</p>
+</div>
+</div>
+<div class="group py-8 border-b border-outline-variant/50 flex items-start gap-8 hover:bg-surface transition-colors duration-300 rounded-xl px-4 -mx-4">
+<span aria-hidden="true" class="font-label-md text-4xl text-outline font-bold w-16">02</span>
+<div class="flex-1">
+<h4 class="font-headline-lg text-3xl text-on-surface mb-4 group-hover:text-primary transition-colors">Social Media &amp; Content</h4>
+<p class="font-body-md text-body-md text-on-surface max-w-2xl opacity-80 leading-relaxed">Crafting editorial-grade social narratives that resonate with high-value audiences across platforms.</p>
+</div>
+</div>
+<div class="group py-8 border-b border-outline-variant/50 flex items-start gap-8 hover:bg-surface transition-colors duration-300 rounded-xl px-4 -mx-4">
+<span aria-hidden="true" class="font-label-md text-4xl text-outline font-bold w-16">03</span>
+<div class="flex-1">
+<h4 class="font-headline-lg text-3xl text-on-surface mb-4 group-hover:text-primary transition-colors">Creative Direction</h4>
+<p class="font-body-md text-body-md text-on-surface max-w-2xl opacity-80 leading-relaxed">Guiding visual output to ensure consistent, premium aesthetics across all brand touchpoints.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials / Quote Carousel -->
+<section class="py-section-gap px-margin-page flex items-center justify-center min-h-[614px] bg-surface-container-lowest relative overflow-hidden border-y border-outline-variant/30">
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="material-symbols-outlined text-5xl text-outline mb-8 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-lg text-headline-lg-mobile md:text-4xl text-on-surface mb-10 leading-snug italic">
+                "Anjima brought an unparalleled level of cinematic sophistication to our campaign. The strategic vision was matched only by the flawless execution."
+            </p>
+<div class="font-label-md text-label-md">
+<span class="text-primary block mb-2 font-bold uppercase tracking-wider">Sarah Jenkins</span>
+<span class="text-on-surface opacity-70">CMO, [PLACEHOLDER: CLIENT]</span>
+</div>
+<!-- Simple dots for carousel indication -->
+<div class="flex justify-center gap-3 mt-12">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</section>
+<!-- Insights -->
+<section class="py-section-gap px-margin-page bg-surface-container-low">
+<div class="flex justify-between items-end mb-stack-lg border-b border-outline-variant/50 pb-4">
+<h3 class="font-section-header text-section-header text-on-surface uppercase tracking-widest">Insights</h3>
+<a class="font-label-md text-label-md text-primary hover:opacity-80 transition-opacity" href="#">Read All Articles</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-grid">
+<article class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+<div class="mb-6">
+<span class="font-section-header text-xs text-primary border border-primary/30 px-3 py-1.5 rounded-full uppercase font-bold tracking-wider">Strategy</span>
+</div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-4 group-hover:text-primary transition-colors leading-snug">The Editorial Approach to Brand Narrative</h4>
+<p class="font-body-md text-body-md text-on-surface mb-8 line-clamp-3 flex-grow opacity-80 leading-relaxed">Why treating your brand's content like a high-end publication drives deeper audience engagement and perceived value.</p>
+<div class="font-label-md text-sm text-on-surface opacity-60 mt-auto border-t border-outline-variant/30 pt-4">Oct 12, 2023</div>
+</article>
+<article class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+<div class="mb-6">
+<span class="font-section-header text-xs text-primary border border-primary/30 px-3 py-1.5 rounded-full uppercase font-bold tracking-wider">Media</span>
+</div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-4 group-hover:text-primary transition-colors leading-snug">Negative Space in Digital Campaigns</h4>
+<p class="font-body-md text-body-md text-on-surface mb-8 line-clamp-3 flex-grow opacity-80 leading-relaxed">Leveraging emptiness to create focus, prestige, and a cinematic feel in crowded digital feeds.</p>
+<div class="font-label-md text-sm text-on-surface opacity-60 mt-auto border-t border-outline-variant/30 pt-4">Sep 28, 2023</div>
+</article>
+<article class="group bg-surface-container-lowest border border-outline-variant/50 p-8 rounded-xl hover:border-primary/50 hover:shadow-lg transition-all duration-300 flex flex-col h-full hidden lg:flex">
+<div class="mb-6">
+<span class="font-section-header text-xs text-primary border border-primary/30 px-3 py-1.5 rounded-full uppercase font-bold tracking-wider">Creativity</span>
+</div>
+<h4 class="font-headline-lg text-2xl text-on-surface mb-4 group-hover:text-primary transition-colors leading-snug">Designing for the High-Value Client</h4>
+<p class="font-body-md text-body-md text-on-surface mb-8 line-clamp-3 flex-grow opacity-80 leading-relaxed">Understanding the aesthetic triggers that communicate authority and premium quality.</p>
+<div class="font-label-md text-sm text-on-surface opacity-60 mt-auto border-t border-outline-variant/30 pt-4">Aug 15, 2023</div>
+</article>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap px-margin-page bg-surface-container-high text-on-surface flex flex-col items-center justify-center text-center border-t border-outline-variant/30">
+<h2 class="font-display-hero text-headline-lg-mobile md:text-7xl mb-10 leading-tight">
+            READY TO ELEVATE <br/>YOUR BRAND?
+        </h2>
+<button class="bg-primary text-white rounded-full font-label-md text-label-md px-12 py-5 font-bold hover:bg-opacity-90 hover:shadow-md transition-all duration-300 uppercase tracking-wider">
+            LET'S WORK TOGETHER
+        </button>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-page bg-surface-container-lowest border-t border-outline-variant/30 grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-4 flex items-center gap-4">
+<img alt="Anjima Raj Logo" class="h-10 w-auto grayscale opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLtMYh9r9T83BgC2sDkFbUao_0gOx5egAekknyHaN5XSqen6gQTnGOZXc0zWvJULcfU_WBbCN2xvWrIjzMCWZopEYPJnJw5hBGd4t52fRhrFvv8rkzdBCLvRxzDOqre0fv8aRh6cSb9N8PzshC96TziGb2AZrQAOBI3Y91i5RM9hUVie1NI8GXwJnfFwcb5JwC8wuTs2zOm-gGESdoNezY3h0zd5aMZd6Jy9DYKaNcbdiYAtYoXgqGlhFCAo"/>
+<p class="font-label-md text-xs text-on-surface opacity-60 uppercase tracking-widest mt-1">
+                © 2024. ALL RIGHTS RESERVED.
+            </p>
+</div>
+<div class="md:col-span-8 md:text-right">
+<ul class="flex flex-col md:flex-row md:justify-end gap-8 font-label-md text-sm uppercase tracking-wider">
+<li class=""><a class="text-on-surface opacity-70 hover:opacity-100 hover:text-primary transition-colors cursor-pointer duration-300" href="#">LinkedIn</a></li>
+<li class=""><a class="text-on-surface opacity-70 hover:opacity-100 hover:text-primary transition-colors cursor-pointer duration-300" href="#">Instagram</a></li>
+<li class=""><a class="text-on-surface opacity-70 hover:opacity-100 hover:text-primary transition-colors cursor-pointer duration-300" href="#">YouTube</a></li>
+<li class=""><a class="text-on-surface opacity-70 hover:opacity-100 hover:text-primary transition-colors cursor-pointer duration-300 font-bold" href="#">DOWNLOAD CV</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

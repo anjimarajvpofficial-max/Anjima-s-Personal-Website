@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - Anjima Raj</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f4f2ee",
+                      "on-tertiary-container": "#202638",
+                      "on-secondary-fixed": "#101e28",
+                      "surface-container-high": "#e6e4df",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e0ded9",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e1e2e7",
+                      "on-surface": "#1a1a1c",
+                      "primary-fixed": "#dce2ff",
+                      "surface-tint": "#3366cc",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#2a4658",
+                      "inverse-surface": "#2f3032",
+                      "on-surface-variant": "#44474e",
+                      "on-tertiary-fixed": "#001a41",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "on-primary-fixed-variant": "#003b8e",
+                      "outline-variant": "#c4c6cd",
+                      "surface": "#fbf8f3",
+                      "secondary": "#4d6071",
+                      "inverse-primary": "#b5c4ff",
+                      "outline": "#74777f",
+                      "primary-container": "#dae2ff",
+                      "surface-container": "#eceae4",
+                      "on-background": "#1a1a1c",
+                      "on-primary-fixed": "#00164a",
+                      "tertiary-fixed": "#d8e2ff",
+                      "secondary-fixed-dim": "#b4c9de",
+                      "tertiary-fixed-dim": "#adc6ff",
+                      "on-primary-container": "#001d54",
+                      "surface-dim": "#daddd3",
+                      "secondary-container": "#d0e4f8",
+                      "primary": "#3366cc",
+                      "on-secondary-container": "#051d2c",
+                      "tertiary-container": "#d8e2ff",
+                      "secondary-fixed": "#d0e4f8",
+                      "background": "#fbf8f3",
+                      "inverse-on-surface": "#f1f0f4",
+                      "on-error-container": "#410002",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#1d3250",
+                      "surface-bright": "#fbf8f3",
+                      "tertiary": "#374968"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "clamp(6rem, 12vh, 10rem)",
+                      "stack-md": "1rem",
+                      "stack-sm": "0.5rem",
+                      "gutter-grid": "1.5rem",
+                      "stack-lg": "2rem",
+                      "margin-page": "max(2rem, 5vw)"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Noto Serif"
+                      ],
+                      "display-hero": [
+                              "Noto Serif"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "section-header": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Noto Serif"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "1.25rem",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "0.75rem",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "2.5rem",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero": [
+                              "clamp(4rem, 8vw, 8rem)",
+                              {
+                                      "lineHeight": "1.05",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "1rem",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "section-header": [
+                              "0.75rem",
+                              {
+                                      "lineHeight": "1rem",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "3.5rem",
+                              {
+                                      "lineHeight": "1.15",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #fbf8f3; /* background */
+            color: #1a1a1c; /* on-background */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="bg-background/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-margin-page py-5 w-full flat no shadows">
+<a class="font-display-hero text-xl tracking-tight font-bold text-on-surface" href="#">ANJIMA RAJ</a>
+<div class="hidden md:flex gap-10">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md uppercase cursor-pointer transition-all active:scale-95" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md uppercase cursor-pointer transition-all active:scale-95" href="#">Work</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md uppercase cursor-pointer transition-all active:scale-95" href="#">Services</a>
+<a class="text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-primary font-label-md text-label-md uppercase cursor-pointer transition-all duration-300 active:scale-95" href="#">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md uppercase cursor-pointer transition-all active:scale-95" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md uppercase cursor-pointer transition-all active:scale-95" href="#">Contact</a>
+</div>
+<a class="hidden md:inline-flex bg-on-surface text-surface px-6 py-3 rounded-full font-label-md text-label-md uppercase font-bold hover:opacity-80 transition-opacity duration-300 cursor-pointer" href="#">LET'S WORK TOGETHER</a>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow pt-[120px]">
+<!-- Introduction -->
+<section class="px-margin-page py-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-10 md:col-start-2 text-center md:text-left">
+<h1 class="font-display-hero text-display-hero text-on-surface mb-stack-lg leading-tight italic">
+                    Merging Media,<br/>Marketing, and Creativity.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant md:w-3/4 mx-auto md:mx-0">
+                    A professional summary focusing on the strategic intersection of marketing dynamics, media landscapes, and high-impact creative execution. Designing solutions that resonate and drive measurable results.
+                </p>
+</div>
+</section>
+<!-- Professional Journey -->
+<section aria-labelledby="heading-journey" class="px-margin-page py-section-gap bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-5 md:col-start-2 relative h-[600px]">
+<img alt="Anjima Raj professional portrait" class="object-cover w-full h-full rounded-sm filter grayscale opacity-90 mix-blend-multiply" data-alt="A sophisticated, high-contrast black and white portrait of a professional woman in a modern architectural setting. The lighting is dramatic and cinematic, casting deep shadows that highlight architectural lines and textures, creating a mood of absolute precision, authority, and editorial prestige within the high-end media sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSb4nEHyVhl8NI6-scB1pC97C-WJwcCsm_THG3YiSbN0p3ZgL7kFeQFq0z7991FhnMBZwFpcqz1JEaez5qH1o0DI7c0ad4mvZ-q5975Ouij6ez7ldULtGDjjOBtyuFsrmA_QAWGxZZKVss-KIEmykASVJMdPT7NiL8jRmwDTVS2X1hX6X6ieTcOYImMfPigdD4E-DWpQDKkwQkNmdX1Dmq38eom0CJChUDTnhnPvswSnCKcVjwBb9Gnw"/>
+</div>
+<div class="md:col-span-5 md:col-start-8 flex flex-col justify-center py-8">
+<h2 class="font-section-header text-section-header text-on-surface-variant uppercase tracking-widest mb-stack-md font-bold" id="heading-journey">Professional Journey</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-stack-lg leading-relaxed">
+                        A story-driven overview detailing the evolution from foundational marketing roles to strategic leadership. Emphasizing the ability to navigate complex media environments and deliver compelling creative narratives.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Every project is approached as a narrative opportunity, ensuring that brand identity is not just seen, but deeply felt.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Career Timeline -->
+<section aria-labelledby="heading-timeline" class="px-margin-page py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-4">
+<h2 class="font-section-header text-section-header text-on-surface-variant uppercase tracking-widest sticky top-[140px] font-bold" id="heading-timeline">Career Timeline</h2>
+</div>
+<ol class="md:col-span-8 space-y-16"><li class="border-t border-outline-variant/50 pt-stack-md flex flex-col md:flex-row md:justify-between group cursor-default"><div class="mb-stack-sm md:mb-0"><h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface group-hover:text-primary transition-colors duration-300">Strategy Director</h3><p class="font-body-md text-body-md text-on-surface-variant italic">[PLACEHOLDER: CLIENT]</p></div><div class="font-label-md text-label-md text-on-surface-variant opacity-80 font-bold uppercase mt-2 md:mt-0">2021 — PRESENT</div></li><li class="border-t border-outline-variant/50 pt-stack-md flex flex-col md:flex-row md:justify-between group cursor-default"><div class="mb-stack-sm md:mb-0"><h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface group-hover:text-primary transition-colors duration-300">Senior Marketing Manager</h3><p class="font-body-md text-body-md text-on-surface-variant italic">[PLACEHOLDER: CLIENT]</p></div><div class="font-label-md text-label-md text-on-surface-variant opacity-80 font-bold uppercase mt-2 md:mt-0">2018 — 2021</div></li><li class="border-t border-outline-variant/50 pt-stack-md flex flex-col md:flex-row md:justify-between group cursor-default"><div class="mb-stack-sm md:mb-0"><h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface group-hover:text-primary transition-colors duration-300">Creative Strategist</h3><p class="font-body-md text-body-md text-on-surface-variant italic">[PLACEHOLDER: CLIENT]</p></div><div class="font-label-md text-label-md text-on-surface-variant opacity-80 font-bold uppercase mt-2 md:mt-0">2015 — 2018</div></li></ol>
+</div>
+</section>
+<!-- Education & Achievements -->
+<section class="px-margin-page py-section-gap bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-6 p-stack-lg">
+<h2 class="font-section-header text-section-header text-on-surface-variant uppercase tracking-widest mb-stack-lg font-bold border-b border-outline-variant/30 pb-4">Education</h2>
+<ul class="space-y-stack-md">
+<li class="flex flex-col py-2">
+<span class="font-headline-lg-mobile text-2xl text-on-surface">Master of Science in Marketing Analytics</span>
+<span class="font-body-md text-body-md text-on-surface-variant italic mt-1">[Placeholder: University Name]</span>
+</li>
+<li class="flex flex-col py-2">
+<span class="font-headline-lg-mobile text-2xl text-on-surface">Bachelor of Arts in Media Studies</span>
+<span class="font-body-md text-body-md text-on-surface-variant italic mt-1">[Placeholder: University Name]</span>
+</li>
+</ul>
+</div>
+<div class="md:col-span-6 p-stack-lg">
+<h2 class="font-section-header text-section-header text-on-surface-variant uppercase tracking-widest mb-stack-lg font-bold border-b border-outline-variant/30 pb-4">Achievements</h2>
+<ul class="space-y-stack-md">
+<li class="flex flex-col py-2">
+<span class="font-headline-lg-mobile text-2xl text-on-surface">Award for Excellence in Digital Strategy</span>
+<span class="font-body-md text-body-md text-on-surface-variant italic mt-1">[Placeholder: Organization], 2022</span>
+</li>
+<li class="flex flex-col py-2">
+<span class="font-headline-lg-mobile text-2xl text-on-surface">Top 30 Under 30 in Media Innovators</span>
+<span class="font-body-md text-body-md text-on-surface-variant italic mt-1">[Placeholder: Publication], 2019</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Personal Perspective -->
+<section class="px-margin-page py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-8 md:col-start-3 text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg italic">The Future is Synthesized.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Exploring a future-focused digital vision where Artificial Intelligence acts as a catalyst for unprecedented creativity. Believing in a synthesis of human intuition and algorithmic precision to redefine the boundaries of marketing and media.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-section-gap px-margin-page grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-start flat no shadows">
+<div class="md:col-span-4 flex flex-col gap-stack-md">
+<span class="font-display-hero text-3xl font-bold text-on-surface tracking-tight">ANJIMA RAJ</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">© 2024 ANJIMA RAJ. ALL RIGHTS RESERVED.</span>
+</div>
+<div class="md:col-span-8 flex flex-wrap justify-end gap-stack-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase duration-300 cursor-pointer" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase duration-300 cursor-pointer" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase duration-300 cursor-pointer" href="#">YouTube</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase duration-300 cursor-pointer" href="#">DOWNLOAD CV</a>
+</div>
+</footer>
+</body></html>

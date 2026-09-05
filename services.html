@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anjima Raj - Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#fdf7f8",
+                        "surface-variant": "#e2e2ec",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1b1f",
+                        "tertiary-fixed-dim": "#c2c3da",
+                        "primary-fixed-dim": "#a3c9ff",
+                        "secondary-fixed": "#dfe2f6",
+                        "on-primary-container": "#001a41",
+                        "surface-container-highest": "#e4e1e4",
+                        "tertiary": "#5a5b71",
+                        "on-surface-variant": "#45464f",
+                        "background": "#fdf7f8",
+                        "on-secondary-fixed": "#161b2c",
+                        "on-primary-fixed-variant": "#00479f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001a41",
+                        "on-tertiary-container": "#17182b",
+                        "primary-container": "#d3e3ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae7ea",
+                        "primary-fixed": "#d3e3ff",
+                        "on-tertiary-fixed": "#17182b",
+                        "surface-dim": "#ded9db",
+                        "on-tertiary-fixed-variant": "#424358",
+                        "outline-variant": "#c5c6d0",
+                        "inverse-surface": "#303032",
+                        "inverse-primary": "#a3c9ff",
+                        "on-secondary-container": "#161b2c",
+                        "tertiary-container": "#e0e0f9",
+                        "on-error-container": "#410002",
+                        "tertiary-fixed": "#e0e0f9",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#c3c6da",
+                        "surface-tint": "#245fba",
+                        "primary": "#245fba",
+                        "surface-container": "#f0edef",
+                        "error": "#ba1a1a",
+                        "outline": "#767680",
+                        "inverse-on-surface": "#f2eff0",
+                        "on-surface": "#1b1b1f",
+                        "secondary-fixed-dim": "#c3c6da",
+                        "on-secondary-fixed-variant": "#414659",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f2f4",
+                        "secondary": "#595d72",
+                        "surface": "#fdf7f8"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-md": "1rem",
+                        "section-gap": "clamp(8rem, 15vh, 12rem)",
+                        "margin-page": "max(2rem, 5vw)",
+                        "gutter-grid": "1.5rem",
+                        "stack-lg": "2rem",
+                        "stack-sm": "0.5rem"
+                    },
+                    fontFamily: {
+                        "display-hero": [
+                            "Noto Serif"
+                        ],
+                        "label-md": [
+                            "Noto Serif"
+                        ],
+                        "section-header": [
+                            "Noto Serif"
+                        ],
+                        "body-lg": [
+                            "Noto Serif"
+                        ],
+                        "headline-lg": [
+                            "Noto Serif"
+                        ],
+                        "body-md": [
+                            "Noto Serif"
+                        ],
+                        "headline-lg-mobile": [
+                            "Noto Serif"
+                        ]
+                    },
+                    fontSize: {
+                        "display-hero": [
+                            "clamp(4rem, 8vw, 9rem)",
+                            {
+                                "lineHeight": "0.95",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "label-md": [
+                            "0.875rem",
+                            {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "section-header": [
+                            "0.75rem",
+                            {
+                                "lineHeight": "1rem",
+                                "letterSpacing": "0.2em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "1.25rem",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "3.5rem",
+                            {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "body-md": [
+                            "1rem",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "2.25rem",
+                            {
+                                "lineHeight": "1.2",
+                                "fontWeight": "500"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fdf7f8; color: #1b1b1f; }
+        .service-item:hover .service-num { opacity: 0.4; }
+        .service-item:hover .service-arrow { transform: translateX(8px); opacity: 1; }
+        .service-arrow { transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0; }
+        .service-num { transition: opacity 0.3s ease; }
+    </style>
+</head>
+<body class="font-body-lg antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center px-margin-page py-6">
+<a class="font-headline-lg text-xl tracking-tighter font-bold text-on-surface hover:opacity-80 transition-opacity duration-300" href="#">ANJIMA RAJ</a>
+<div class="hidden md:flex space-x-8 items-center font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Work</a>
+<a class="text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-primary" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="hidden md:block font-label-md text-label-md text-on-background px-6 py-3 border border-outline-variant rounded-lg hover:border-primary-container hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 active:scale-95">LET'S WORK TOGETHER</button>
+<!-- Mobile Menu Toggle (Minimal) -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-[120px] pb-section-gap px-margin-page max-w-[1440px] mx-auto">
+<header class="mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter-grid pt-12 md:pt-24">
+<div class="md:col-span-8 md:col-start-2">
+<h1 class="font-display-hero text-display-hero text-on-surface mb-stack-lg italic">Expertise.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    A comprehensive suite of digital strategy and creative services designed to elevate brands, engage audiences, and drive measurable impact in a complex media landscape.
+                </p>
+</div>
+</header>
+<!-- Services List -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid">
+<div class="md:col-span-10 md:col-start-2">
+<div class="border-t border-outline-variant/50">
+<!-- Service 01 -->
+<div class="service-item group block border-b border-outline-variant/50 py-12 relative cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-2 font-display-hero text-display-hero service-num text-[4rem] text-primary">01</div>
+<div class="md:col-span-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm group-hover:text-primary transition-colors duration-300 italic">Marketing Strategy</h2>
+</div>
+<div class="md:col-span-3">
+<p class="font-body-md text-body-md text-on-surface-variant">Data-driven roadmaps that align brand vision with market opportunities, ensuring every touchpoint delivers value.</p>
+</div>
+<div class="md:col-span-1 text-right flex justify-end">
+<span class="material-symbols-outlined text-primary service-arrow text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service 02 -->
+<div class="service-item group block border-b border-outline-variant/50 py-12 relative cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-2 font-display-hero text-display-hero service-num text-[4rem] text-primary">02</div>
+<div class="md:col-span-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm group-hover:text-primary transition-colors duration-300 italic">Social Media &amp; Content</h2>
+</div>
+<div class="md:col-span-3">
+<p class="font-body-md text-body-md text-on-surface-variant">Narrative-driven content ecosystems designed to cultivate community, spark conversation, and build enduring loyalty.</p>
+</div>
+<div class="md:col-span-1 text-right flex justify-end">
+<span class="material-symbols-outlined text-primary service-arrow text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service 03 -->
+<div class="service-item group block border-b border-outline-variant/50 py-12 relative cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-2 font-display-hero text-display-hero service-num text-[4rem] text-primary">03</div>
+<div class="md:col-span-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm group-hover:text-primary transition-colors duration-300 italic">AI Marketing &amp; Automation</h2>
+</div>
+<div class="md:col-span-3">
+<p class="font-body-md text-body-md text-on-surface-variant">Leveraging cutting-edge intelligence to personalize experiences at scale and optimize conversion pipelines efficiently.</p>
+</div>
+<div class="md:col-span-1 text-right flex justify-end">
+<span class="material-symbols-outlined text-primary service-arrow text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service 04 -->
+<div class="service-item group block border-b border-outline-variant/50 py-12 relative cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-2 font-display-hero text-display-hero service-num text-[4rem] text-primary">04</div>
+<div class="md:col-span-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm group-hover:text-primary transition-colors duration-300 italic">Creative Production &amp; Media</h2>
+</div>
+<div class="md:col-span-3">
+<p class="font-body-md text-body-md text-on-surface-variant">High-end visual storytelling and media execution that translates brand identity into striking, memorable assets.</p>
+</div>
+<div class="md:col-span-1 text-right flex justify-end">
+<span class="material-symbols-outlined text-primary service-arrow text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service 05 -->
+<div class="service-item group block border-b border-outline-variant/50 py-12 relative cursor-pointer">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center">
+<div class="md:col-span-2 font-display-hero text-display-hero service-num text-[4rem] text-primary">05</div>
+<div class="md:col-span-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm group-hover:text-primary transition-colors duration-300 italic">Digital Campaigns &amp; Brand Marketing</h2>
+</div>
+<div class="md:col-span-3">
+<p class="font-body-md text-body-md text-on-surface-variant">Integrated, multi-channel initiatives engineered to maximize reach, provoke engagement, and dominate market share.</p>
+</div>
+<div class="md:col-span-1 text-right flex justify-end">
+<span class="material-symbols-outlined text-primary service-arrow text-3xl">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter-grid text-center">
+<div class="md:col-span-8 md:col-start-3 bg-surface-container p-16 border border-outline-variant/30 rounded-lg">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-md italic">Ready to elevate your brand?</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-lg mx-auto">Let's build something exceptional together.</p>
+<button aria-label="Contact Anjima Raj to start a project" class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors duration-300 active:scale-95 inline-flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+                    LET'S WORK TOGETHER
+                    <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/30 w-full py-section-gap px-margin-page grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-start">
+<div class="md:col-span-4 flex flex-col gap-stack-lg">
+<span class="font-headline-lg text-3xl font-bold text-on-surface">ANJIMA RAJ</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 ANJIMA RAJ. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-gutter-grid font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors duration-300 cursor-pointer" href="#">LinkedIn</a>
+<a class="hover:text-primary transition-colors duration-300 cursor-pointer" href="#">Instagram</a>
+<a class="hover:text-primary transition-colors duration-300 cursor-pointer" href="#">YouTube</a>
+<a class="hover:text-primary transition-colors duration-300 cursor-pointer font-bold text-primary" href="#">DOWNLOAD CV</a>
+</div>
+</footer>
+</body></html>

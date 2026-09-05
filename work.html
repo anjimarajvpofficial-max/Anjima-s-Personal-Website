@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anjima Raj - Work</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f4f3f7",
+                        "on-tertiary-container": "#151b2c",
+                        "on-secondary-fixed": "#121d2a",
+                        "surface-container-high": "#ebe9ef",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e5e3e9",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e1e2ec",
+                        "on-surface": "#1a1b20",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-tint": "#3366cc",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3e4755",
+                        "inverse-surface": "#2f3036",
+                        "on-surface-variant": "#44474f",
+                        "on-tertiary-fixed": "#151b2c",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-primary-fixed-variant": "#001946",
+                        "outline-variant": "#c4c6d0",
+                        "surface": "#fdf8fd",
+                        "secondary": "#565f6d",
+                        "inverse-primary": "#adc6ff",
+                        "outline": "#74777f",
+                        "primary-container": "#d8e2ff",
+                        "surface-container": "#efedf3",
+                        "on-background": "#1a1b20",
+                        "on-primary-fixed": "#001946",
+                        "tertiary-fixed": "#d9e2ff",
+                        "secondary-fixed-dim": "#dbe3f4",
+                        "tertiary-fixed-dim": "#b0c6ff",
+                        "on-primary-container": "#001946",
+                        "surface-dim": "#ddd8dd",
+                        "secondary-container": "#dbe3f4",
+                        "primary": "#3366cc",
+                        "on-secondary-container": "#121d2a",
+                        "tertiary-container": "#d9e2ff",
+                        "secondary-fixed": "#dbe3f4",
+                        "background": "#fdf8fd",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-error-container": "#410002",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#2e425a",
+                        "surface-bright": "#fdf8fd",
+                        "tertiary": "#465973"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "clamp(6rem, 12vh, 10rem)",
+                        "stack-md": "1rem",
+                        "stack-sm": "0.5rem",
+                        "gutter-grid": "2rem",
+                        "stack-lg": "2rem",
+                        "margin-page": "max(2rem, 5vw)"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Noto Serif", "serif"],
+                        "label-md": ["Noto Serif", "serif"],
+                        "headline-lg-mobile": ["Noto Serif", "serif"],
+                        "display-hero": ["Noto Serif", "serif"],
+                        "body-md": ["Noto Serif", "serif"],
+                        "section-header": ["Noto Serif", "serif"],
+                        "headline-lg": ["Noto Serif", "serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["1.125rem", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "label-md": ["0.875rem", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["2.25rem", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-hero": ["clamp(3.5rem, 7vw, 7.5rem)", { "lineHeight": "1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-md": ["1rem", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "section-header": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "headline-lg": ["3.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card {
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease;
+        }
+        
+        .project-card:hover {
+            border-color: theme('colors.primary');
+        }
+
+        .project-image-container {
+            overflow: hidden;
+        }
+
+        .project-image {
+            transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.03);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/50 transition-all duration-300" id="top-nav">
+<div class="flex justify-between items-center px-margin-page py-6 w-full max-w-[1920px] mx-auto">
+<a class="font-headline-lg text-xl tracking-tight font-semibold text-on-surface hover:opacity-80 transition-opacity duration-300 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">ANJIMA RAJ</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors duration-300 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-primary nav-link active cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Work</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors duration-300 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors duration-300 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors duration-300 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Insights</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors duration-300 cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Contact</a>
+</nav>
+<button class="hidden lg:flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-DEFAULT font-label-md text-label-md font-bold hover:bg-primary/90 transition-colors cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                LET'S WORK TOGETHER
+            </button>
+<button class="md:hidden text-on-surface cursor-pointer active:scale-95 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-40 pb-section-gap">
+<!-- Page Header -->
+<section class="px-margin-page py-16 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter-grid fade-in-up visible">
+<div class="md:col-span-12 lg:col-span-10 lg:col-start-2 text-center">
+<h1 class="font-display-hero text-display-hero text-on-surface mb-stack-lg italic">Selected Work</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">A curated selection of recent projects focusing on editorial design, digital experiences, and brand identity.</p>
+</div>
+</section>
+<!-- Project List -->
+<section class="px-margin-page max-w-[1920px] mx-auto flex flex-col gap-section-gap">
+<!-- Project 1 -->
+<article class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center fade-in-up visible">
+<div class="md:col-span-12 lg:col-span-5 lg:col-start-2 order-2 lg:order-1">
+<div class="flex flex-col gap-stack-lg pr-0 lg:pr-8">
+<div>
+<span class="font-section-header text-section-header text-primary mb-stack-sm block">EDITORIAL DESIGN</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">[PLACEHOLDER: CLIENT]</h2>
+</div>
+<div class="grid grid-cols-2 gap-stack-md border-t border-outline-variant pt-stack-md">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Role</span>
+<span class="font-body-md text-body-md text-on-surface">Art Direction &amp; UI</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Outcome</span>
+<span class="font-body-md text-body-md text-on-surface">Digital Publication</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Redefining the digital reading experience for a high-end lifestyle publication. The focus was on creating a fluid, grid-breaking layout that allows stunning photography to breathe while maintaining strict typographic hierarchy.
+                        </p>
+<div>
+<button aria-label="View case study for Editorial Design project" class="group inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:text-primary/80 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                                VIEW CASE STUDY
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 lg:col-span-5 order-1 lg:order-2 project-card">
+<div class="project-image-container rounded-DEFAULT w-full aspect-[4/5] relative bg-surface-container-high shadow-md">
+<div class="absolute inset-0 bg-black/5 z-10 pointer-events-none mix-blend-overlay"></div>
+<div class="project-image w-full h-full bg-cover bg-center" data-alt="High fashion editorial digital magazine layout displayed on a sleek tablet device. The scene is lit with moody, dramatic studio lighting highlighting the crisp typography and deep contrasts of the UI. A dark, sophisticated editorial aesthetic with heavy negative space and champagne accents against a pristine black background." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCeco2Gvlc8uajcq0yeeVT7VVUea8hZFQKsdjj_Lj2GJtRkcOJZSPhcSJDUnYXz5gEQj79vnjZyzUHBsnX4mcvxuQ6Vn-DZxHzFw3ZnSo_PlonK-XAl2hDKs9zCdqTfufaDKbAwzFYjLbKuc9LBAFF3zQxhRGq3sfbjRBYQFH_MUrDiYwOWxKE8QJFmq2hBPbYtYDAnap8sXwTbFBJYJVwzHizNCfIo-OjpGyL49_WdqAun-xMVPVg9QQ");'></div>
+</div>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center fade-in-up visible">
+<div class="md:col-span-12 lg:col-span-5 lg:col-start-7 order-2">
+<div class="flex flex-col gap-stack-lg pl-0 lg:pl-8">
+<div>
+<span class="font-section-header text-section-header text-primary mb-stack-sm block">BRAND IDENTITY</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">[PLACEHOLDER: CLIENT]</h2>
+</div>
+<div class="grid grid-cols-2 gap-stack-md border-t border-outline-variant pt-stack-md">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Role</span>
+<span class="font-body-md text-body-md text-on-surface">Lead Designer</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Outcome</span>
+<span class="font-body-md text-body-md text-on-surface">Global Rebrand</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            A comprehensive visual identity overhaul for an architectural firm. The system relies on monochromatic austerity punctuated by precise, structural typographic arrangements, mirroring their design philosophy.
+                        </p>
+<div>
+<button aria-label="View case study for Brand Identity project" class="group inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:text-primary/80 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                                VIEW CASE STUDY
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 lg:col-span-5 lg:col-start-2 lg:row-start-1 order-1 project-card">
+<div class="project-image-container rounded-DEFAULT w-full aspect-[4/5] relative bg-surface-container-high shadow-md">
+<div class="absolute inset-0 bg-black/5 z-10 pointer-events-none mix-blend-overlay"></div>
+<div class="project-image w-full h-full bg-cover bg-center" data-alt="A minimalist architectural brand identity presentation featuring premium stationary laid out on a dark concrete surface. Stark monochromatic palette with sharp, geometric typography. Cinematic lighting creates deep, elongated shadows emphasizing the texture of the thick paper stock. The mood is precise, authoritative, and brutally elegant." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFR03Gqbo4u6j4uYmYuCwrsavN7B2At9G95UnZyAcJqBZhhRvK3pylzc3w8VGOlxJilQtZJKfZ6Sc_CoVlhhcjRf1_AtJOC-qxMnqTFslaRfnEAN-lGP-m8rlD4oNurkuffxwT_UyaVvgUEtfNOm82VMSkzV65mXzW8H7CIzLLYgo9lklZrllQDg6CZPgOP3Xceg4epKbPuvrphEebXxtbzLEMlbfoBbXzh8kh-QNwHj5fBQTDv9S7qA");'></div>
+</div>
+</div>
+</article>
+<!-- Project 3 -->
+<article class="grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-center fade-in-up visible">
+<div class="md:col-span-12 lg:col-span-5 lg:col-start-2 order-2 lg:order-1">
+<div class="flex flex-col gap-stack-lg pr-0 lg:pr-8">
+<div>
+<span class="font-section-header text-section-header text-primary mb-stack-sm block">DIGITAL EXPERIENCE</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">[PLACEHOLDER: CLIENT]</h2>
+</div>
+<div class="grid grid-cols-2 gap-stack-md border-t border-outline-variant pt-stack-md">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Role</span>
+<span class="font-body-md text-body-md text-on-surface">UX/UI &amp; Prototyping</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Outcome</span>
+<span class="font-body-md text-body-md text-on-surface">Web Platform</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            An immersive digital showcase for a contemporary art gallery. Utilizing WebGL for fluid transitions and a stark, minimal UI to ensure the artworks remain the undeniable focal point of the user journey.
+                        </p>
+<div>
+<button aria-label="View case study for Digital Experience project" class="group inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:text-primary/80 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+                                VIEW CASE STUDY
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 lg:col-span-5 order-1 lg:order-2 project-card">
+<div class="project-image-container rounded-DEFAULT w-full aspect-[4/5] relative bg-surface-container-high shadow-md">
+<div class="absolute inset-0 bg-black/5 z-10 pointer-events-none mix-blend-overlay"></div>
+<div class="project-image w-full h-full bg-cover bg-center" data-alt="A sleek desktop monitor displaying a contemporary art gallery website. The screen shows a dark mode interface with expansive negative space, framing a vibrant abstract painting. The environment is a dimly lit, sophisticated studio space with subtle reflections on the desk surface, embodying a premium, high-end editorial aesthetic." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeQAd9H8mpsfcMK8zJZ-16dlyz7xj1GcNtdi4_qAj6mmIeUQG-GJfX6uEwu4zwpD26MWPQBTpAYu19N6G7rdbvwTnRar-o7bnu1-KVIgqBFF7LI0xBBxKJPRM1dWECwpA_RzFOiINsnUWSIdtjWBe6JHd6hJYRtJ6kzEaBneGkS5I56hOUN0E750phzOH8ih8K7pdNqsuaIWIWgEC9DmjOAo6cZUThnZJCDBVgRi8Z2s1QORzSlxri5g");'></div>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/30 w-full py-16 px-margin-page">
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter-grid items-start">
+<div class="md:col-span-12 lg:col-span-6 flex flex-col gap-stack-lg">
+<a class="font-headline-lg text-3xl font-bold text-on-surface cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">ANJIMA RAJ</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Crafting digital experiences with editorial precision and scholarly depth.</p>
+</div>
+<div class="md:col-span-12 lg:col-span-6 flex flex-col md:flex-row justify-between lg:justify-end gap-stack-lg lg:gap-16">
+<div class="flex flex-col gap-stack-sm">
+<h3 class="font-section-header text-section-header text-on-surface mb-stack-sm">SOCIAL</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">YouTube</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h3 class="font-section-header text-section-header text-on-surface mb-stack-sm">RESOURCES</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">
+                        DOWNLOAD CV
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">download</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-12 mt-12 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 ANJIMA RAJ. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Nav background logic on scroll
+            const topNav = document.getElementById('top-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    topNav.classList.add('shadow-sm');
+                } else {
+                    topNav.classList.remove('shadow-sm');
+                }
+            });
+        });
+    </script>
+</body></html>
