@@ -109,12 +109,13 @@ export default function Hero() {
         </motion.div>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8, ease: [0.19, 1, 0.22, 1] }}
-          className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-md flex flex-col sm:flex-row items-center justify-center gap-4 z-20 pointer-events-auto"
-        >
+        <div className="absolute bottom-16 left-0 w-full flex justify-center z-20 pointer-events-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.19, 1, 0.22, 1] }}
+            className="w-[90vw] max-w-md flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
           <MagneticButton>
             <button
               onClick={() => { const el = document.getElementById("footer"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
@@ -132,7 +133,8 @@ export default function Hero() {
               Download CV
             </a>
           </MagneticButton>
-        </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div 
           style={{ y: lineY, width: lineWidth, opacity: lineOpacity }}
