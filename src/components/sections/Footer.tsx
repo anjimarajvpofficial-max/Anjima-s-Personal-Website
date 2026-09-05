@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <section id="footer" className="relative z-20 bg-ink min-h-screen flex flex-col justify-between pt-32 md:pt-40 overflow-hidden border-t border-paper/10">
+    <section id="footer" className="relative z-20 bg-ink min-h-screen flex flex-col justify-between pt-32 md:pt-40 border-t border-paper/10">
       
       <div className="px-4 md:px-12 mb-16 md:mb-20">
         <div className="font-mono text-[10px] tracking-[0.2em] opacity-40 uppercase mb-6"><DecryptText text="Open a Channel // Contact" delay={100} speed={20} /></div>
