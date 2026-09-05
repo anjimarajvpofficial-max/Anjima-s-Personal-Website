@@ -89,7 +89,7 @@ export default function Transmissions() {
                 onClick={() => { setActiveVideo(item.id); playClickThud(); }}
                 onMouseEnter={() => { setVariant("text"); setText("PLAY"); playHoverBlip(); }}
                 onMouseLeave={() => { setVariant("default"); setText(""); }}
-                className="w-[85%] md:w-auto h-[60vh] md:h-[75vh] aspect-[9/16] relative group overflow-hidden bg-ink-light rounded-sm shadow-2xl"
+                className="w-[80vw] md:w-auto h-auto md:h-[75vh] aspect-[9/16] relative group overflow-hidden bg-ink-light rounded-sm shadow-2xl"
               >
                  {/* High-end hover state: greyscale to color */}
                  <motion.img loading="lazy" 

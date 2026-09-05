@@ -69,7 +69,7 @@ export default function Formula() {
 
   return (
     <section className="relative z-20 bg-accent text-ink py-32 flex flex-col items-center justify-center overflow-hidden">
-      <div className="font-mono text-xs tracking-widest mb-20 text-ink/80 font-bold">THE ANJIMA FORMULA // ACADEMIC PHYSICS FOUNDATION</div>
+      <div className="font-mono text-xs tracking-widest mb-20 text-ink/80 font-bold">THE AMAR FORMULA // ACADEMIC PHYSICS FOUNDATION</div>
       
       <div className="w-full flex flex-col gap-2 rotate-[-2deg] scale-110 text-paper">
         {/* Track 1 - Moves Left */}

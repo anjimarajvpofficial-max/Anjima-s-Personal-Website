@@ -76,7 +76,7 @@ export default function SiteNav() {
               onClick={() => scrollTo("hero")}
               className=" font-display text-sm md:text-base tracking-widest uppercase text-paper hover:text-accent transition-colors block py-2"
             >
-              Anjima Raj
+              Amar
             </button>
           </MagneticButton>
 
@@ -176,7 +176,7 @@ export default function SiteNav() {
               transition={{ delay: 0.6 }}
               className="absolute bottom-10 left-8 right-8 flex justify-between font-mono text-[10px] opacity-20"
             >
-              <span>Anjima Raj</span>
+              <span>Amar</span>
               <span>Marketing · Media · Creativity</span>
             </motion.div>
           </motion.div>

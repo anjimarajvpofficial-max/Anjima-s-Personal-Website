@@ -699,8 +699,8 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
 }
 
-.left-16 {
-  left: 4rem;
+.left-2 {
+  left: 0.5rem;
 }
 
 .left-20 {
@@ -723,8 +723,8 @@ h1, h2, h3, h4, h5, h6 {
   right: 3rem;
 }
 
-.right-24 {
-  right: 6rem;
+.right-2 {
+  right: 0.5rem;
 }
 
 .right-4 {
@@ -763,12 +763,12 @@ h1, h2, h3, h4, h5, h6 {
   top: 3rem;
 }
 
-.top-20 {
-  top: 5rem;
+.top-16 {
+  top: 4rem;
 }
 
-.top-28 {
-  top: 7rem;
+.top-24 {
+  top: 6rem;
 }
 
 .top-full {
@@ -1095,8 +1095,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 600vh;
 }
 
-.h-\[60vh\] {
-  height: 60vh;
+.h-auto {
+  height: auto;
 }
 
 .h-full {
@@ -1175,8 +1175,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 300px;
 }
 
-.w-\[85\%\] {
-  width: 85%;
+.w-\[80vw\] {
+  width: 80vw;
 }
 
 .w-\[90vw\] {
@@ -2602,8 +2602,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
+  .md\:bottom-16 {
+    bottom: 4rem;
+  }
+
   .md\:left-16 {
     left: 4rem;
+  }
+
+  .md\:left-8 {
+    left: 2rem;
+  }
+
+  .md\:right-12 {
+    right: 3rem;
   }
 
   .md\:right-24 {
@@ -2612,6 +2624,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .md\:right-6 {
     right: 1.5rem;
+  }
+
+  .md\:top-20 {
+    top: 5rem;
+  }
+
+  .md\:top-28 {
+    top: 7rem;
   }
 
   .md\:col-span-1 {
@@ -2882,9 +2902,5 @@ h1, h2, h3, h4, h5, h6 {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-
-  .md\:opacity-60 {
-    opacity: 0.6;
   }
 }

@@ -163,7 +163,7 @@ export default function Services() {
               {s.title}
             </h3>
             
-            <p className={`font-mono text-xs leading-relaxed md:col-span-4 z-10 transition-colors duration-300 ${hovered === i ? "text-ink/80" : "opacity-0 md:opacity-60"}`}>
+            <p className={`font-mono text-xs leading-relaxed md:col-span-4 z-10 transition-colors duration-300 ${hovered === i ? "text-ink/80" : "opacity-60"}`}>
               {s.desc}
             </p>
             

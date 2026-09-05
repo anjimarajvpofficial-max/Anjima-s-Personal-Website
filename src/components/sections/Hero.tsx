@@ -48,7 +48,7 @@ export default function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   
-  const titleText = "ANJIMA";
+  const titleText = "AMAR";
   const textX = useTransform(springX, (val) => -val * 0.3);
   const textY = useTransform(springY, (val) => -val * 0.3);
 
@@ -82,7 +82,7 @@ export default function Hero() {
         
         <motion.div style={{ scale, y, opacity, filter, x: textX }} className="w-full text-center z-10 pointer-events-auto">
           <h1 className="text-[18vw] leading-[0.75] font-display font-bold tracking-tighter uppercase flex justify-center overflow-hidden">
-            <span className="sr-only">Anjima Raj — Digital Marketer, Content Creator & Presenter</span>
+            <span className="sr-only">Amar — Digital Marketer, Content Creator & Presenter</span>
             {titleText.split("").map((letter, i) => (
               <motion.span
                 key={i}

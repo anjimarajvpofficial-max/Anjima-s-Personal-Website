@@ -59,7 +59,7 @@ export default function About() {
             className="aspect-[3/4] bg-ink border border-paper/10 relative overflow-hidden"
           >
             
-            <Image src="/images/portrait.png" alt="Anjima Raj" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700 z-0" />
+            <Image src="/images/portrait.png" alt="Amar" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700 z-0" />
             <div className="absolute inset-0 flex items-end p-6 z-10 pointer-events-none">
               <div className="font-mono text-[10px] opacity-0 tracking-widest">[PLACEHOLDER: CLIENT — Professional Portrait]</div>
             </div>
@@ -74,7 +74,7 @@ export default function About() {
           >
             <div className="font-mono text-[10px] tracking-[0.2em] opacity-40 uppercase mb-4 flex items-center gap-4">
               <span className="w-8 h-[1px] bg-accent inline-block" />
-              About // Anjima Raj
+              About // Amar
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tighter uppercase leading-[0.9] mb-6">
               Marketing.<br/>Media.<br/>Creativity.
@@ -128,7 +128,7 @@ export default function About() {
 
           {activeTab === "journey" && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="flex flex-col gap-0 border border-paper/10 bg-ink-light p-6 md:p-10">
-              <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@anjima:~/career $ ls -l</div>
+              <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@amar:~/career $ ls -l</div>
               {timeline.map((item, i) => (
                 <motion.div
                   key={i}
@@ -139,7 +139,7 @@ export default function About() {
                 >
                   <div className="col-span-3 font-mono text-[10px] text-accent pt-1">{item.year}</div>
                   <div className="col-span-9 relative">
-                    <div className="absolute -left-6 top-1 font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">&gt;</div>
+                    <div className="hidden md:block absolute -left-6 top-1 font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">&gt;</div>
                     <div className="font-display text-xl uppercase tracking-tight group-hover:text-accent transition-colors mb-1">{item.role}</div>
                     <div className="font-mono text-xs opacity-40 mb-3">{item.org}</div>
                     <div className="font-mono text-xs opacity-30 leading-relaxed">{item.desc}</div>
@@ -151,7 +151,7 @@ export default function About() {
 
           {activeTab === "education" && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="flex flex-col gap-0 border border-paper/10 bg-ink-light p-6 md:p-10">
-              <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@anjima:~/education $ cat credentials.txt</div>
+              <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@amar:~/education $ cat credentials.txt</div>
               {education.map((e, i) => (
                 <motion.div
                   key={i}
@@ -160,7 +160,7 @@ export default function About() {
                   transition={{ delay: i * 0.08, duration: 0.5 }}
                   className="pb-8 group relative"
                 >
-                  <div className="absolute -left-6 top-1 font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">&gt;</div>
+                  <div className="hidden md:block absolute -left-6 top-1 font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">&gt;</div>
                   <div className="font-display text-xl uppercase tracking-tight mb-2 group-hover:text-accent transition-colors">{e.degree}</div>
                   <div className="font-mono text-xs opacity-40">{e.institution} // {e.year}</div>
                 </motion.div>
@@ -170,7 +170,7 @@ export default function About() {
 
           {activeTab === "achievements" && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="flex flex-col gap-0 border border-paper/10 bg-ink-light p-6 md:p-10">
-               <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@anjima:~/achievements $ ./execute</div>
+               <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@amar:~/achievements $ ./execute</div>
               {achievements.map((item, i) => (
                 <motion.div
                   key={i}

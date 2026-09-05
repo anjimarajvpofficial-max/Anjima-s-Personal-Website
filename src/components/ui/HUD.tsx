@@ -34,7 +34,7 @@ export default function HUD() {
     <div className="fixed inset-0 pointer-events-none z-[9000] text-paper font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-40">
       
       {/* Top Bar - Pushed to top-12 and left-20 to clear brackets completely */}
-      <div className="absolute top-28 left-16 right-24 flex justify-between items-start">
+      <div className="absolute top-24 md:top-28 left-4 md:left-16 right-4 md:right-24 flex justify-between items-start">
         <div className="flex gap-8">
           <span className="flex items-center gap-2">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" /> 
@@ -47,12 +47,12 @@ export default function HUD() {
         <div className="hidden md:flex gap-8 items-end">
           <span>WB: 5600K</span>
           <span onClick={handleThemeSwitch} className="cursor-pointer hover:text-accent transition-colors pointer-events-auto" title="Switch Theme">ND: {themes[themeIndex].label}</span>
-          <span>CH-01 // ANJIMA</span>
+          <span>CH-01 // AMAR</span>
         </div>
       </div>
 
       {/* Bottom Bar - Pushed to bottom-12 to clear brackets */}
-      <div className="absolute bottom-16 left-16 right-24 flex justify-between items-end">
+      <div className="absolute bottom-8 md:bottom-16 left-4 md:left-16 right-4 md:right-24 flex justify-between items-end">
         <div className="flex flex-col gap-1">
           <span>LAT: 11.2588 N</span>
           <span>LON: 75.7804 E</span>
@@ -65,20 +65,20 @@ export default function HUD() {
 
       {/* Viewfinder Frame Markers - Extreme Corners */}
       {/* Top Left */}
-      <div className="absolute top-20 left-8 w-8 h-[1px] bg-paper" />
-      <div className="absolute top-20 left-8 w-[1px] h-8 bg-paper" />
+      <div className="absolute top-16 md:top-20 left-2 md:left-8 w-8 h-[1px] bg-paper" />
+      <div className="absolute top-16 md:top-20 left-2 md:left-8 w-[1px] h-8 bg-paper" />
       
       {/* Top Right */}
-      <div className="absolute top-20 right-12 w-8 h-[1px] bg-paper" />
-      <div className="absolute top-20 right-12 w-[1px] h-8 bg-paper" />
+      <div className="absolute top-16 md:top-20 right-2 md:right-12 w-8 h-[1px] bg-paper" />
+      <div className="absolute top-16 md:top-20 right-2 md:right-12 w-[1px] h-8 bg-paper" />
       
       {/* Bottom Left */}
-      <div className="absolute bottom-8 left-8 w-8 h-[1px] bg-paper" />
-      <div className="absolute bottom-8 left-8 w-[1px] h-8 bg-paper" />
+      <div className="absolute bottom-8 left-2 md:left-8 w-8 h-[1px] bg-paper" />
+      <div className="absolute bottom-8 left-2 md:left-8 w-[1px] h-8 bg-paper" />
       
       {/* Bottom Right */}
-      <div className="absolute bottom-8 right-12 w-8 h-[1px] bg-paper" />
-      <div className="absolute bottom-8 right-12 w-[1px] h-8 bg-paper" />
+      <div className="absolute bottom-8 right-2 md:right-12 w-8 h-[1px] bg-paper" />
+      <div className="absolute bottom-8 right-2 md:right-12 w-[1px] h-8 bg-paper" />
 
       {/* Center Crosshair */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-[1px] bg-paper/50" />
