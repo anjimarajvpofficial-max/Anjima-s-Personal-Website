@@ -118,7 +118,7 @@ export default function SiteNav() {
               onClick={() => setOpen((p) => !p)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="md:hidden  flex flex-col gap-[5px] p-2 relative z-[9999]"
+              className="md:hidden flex flex-col gap-[5px] p-2 mr-2 relative z-[9999]"
             >
               <motion.span animate={{ rotate: open ? 45 : 0, y: open ? 7 : 0 }} className="block w-6 h-[1px] bg-paper origin-center" />
               <motion.span animate={{ opacity: open ? 0 : 1, scaleX: open ? 0 : 1 }} className="block w-4 h-[1px] bg-paper" />
