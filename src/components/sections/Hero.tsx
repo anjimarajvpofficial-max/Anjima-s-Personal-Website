@@ -116,7 +116,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="w-[90vw] max-w-md flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-          <MagneticButton>
+          <MagneticButton className="w-full sm:w-auto">
             <button
               onClick={() => { const el = document.getElementById("footer"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
               className="w-full sm:w-auto text-center inline-block font-mono text-[10px] sm:text-xs tracking-widest uppercase bg-accent text-ink px-4 sm:px-8 py-3 sm:py-4 border border-transparent hover:bg-paper hover:scale-105 transition-all duration-300 whitespace-nowrap shadow-[0_0_30px_rgba(255,0,80,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)]"
@@ -124,7 +124,7 @@ export default function Hero() {
               Let&apos;s Work Together
             </button>
           </MagneticButton>
-          <MagneticButton>
+          <MagneticButton className="w-full sm:w-auto">
             <a
               href="/CV_Anjima.pdf" target="_blank"
               download

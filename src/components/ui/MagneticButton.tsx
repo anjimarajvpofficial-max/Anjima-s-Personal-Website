@@ -35,7 +35,7 @@ export default function MagneticButton({ children, className = "" }: { children:
       onMouseEnter={mouseEnter}
       animate={{ x: position.x * 0.4, y: position.y * 0.4 }}
       transition={{ type: "spring", stiffness: 350, damping: 20, mass: 0.5 }}
-      className={`block sm:inline-block w-full sm:w-auto ${className}`}
+      className={`inline-block ${className}`}
     >
       {children}
     </motion.div>
