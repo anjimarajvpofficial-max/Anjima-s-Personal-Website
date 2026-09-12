@@ -68,9 +68,8 @@ export async function POST(request: NextRequest) {
       const resend = new Resend(apiKey);
 
       const { data, error } = await resend.emails.send({
-        from: "Website Inquiry <onboarding@resend.dev>",
+        from: "onboarding@resend.dev",
         to: contactEmail,
-        replyTo: safe.email,
         subject: `New Inquiry: ${safe.projectType} from ${safe.company}`,
         html: `
           <div style="font-family: monospace; max-width: 600px; padding: 32px; background: #050505; color: #f4f4f0;">
