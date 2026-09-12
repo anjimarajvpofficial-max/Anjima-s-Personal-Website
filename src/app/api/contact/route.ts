@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
       const { Resend } = await import("resend");
       const resend = new Resend(apiKey);
 
-      await resend.emails.send({
+      const { data, error } = await resend.emails.send({
         from: "Website Inquiry <onboarding@resend.dev>",
         to: contactEmail,
         replyTo: safe.email,
@@ -90,7 +90,13 @@ export async function POST(request: NextRequest) {
           </div>
         `,
       });
+      if (error) {
+        console.error("Resend API Error:", error);
+        return NextResponse.json({ error: `Resend Error: ${error.message}` }, { status: 500 });
+      }
     } else {
+      return NextResponse.json({ error: "Configuration Error: RESEND_API_KEY is not set in Vercel." }, { status: 500 });
+    }
       // Dev mode — log to console
       console.log("📨 Contact form submission (dev mode — add RESEND_API_KEY to send real emails):");
       console.table(safe);
