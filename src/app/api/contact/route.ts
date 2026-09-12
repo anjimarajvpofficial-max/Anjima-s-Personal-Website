@@ -97,10 +97,6 @@ export async function POST(request: NextRequest) {
     } else {
       return NextResponse.json({ error: "Configuration Error: RESEND_API_KEY is not set in Vercel." }, { status: 500 });
     }
-      // Dev mode — log to console
-      console.log("📨 Contact form submission (dev mode — add RESEND_API_KEY to send real emails):");
-      console.table(safe);
-    }
 
     return NextResponse.json({ success: true, message: "Inquiry received. I'll be in touch soon!" });
   } catch (err) {
