@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
       details: sanitize(details),
     };
 
-    const contactEmail = process.env.CONTACT_EMAIL || "anjimarajvp239@gmail.com";
+    const contactEmail = process.env.CONTACT_EMAIL || "anjimarajvp.official@gmail.com";
     const apiKey = process.env.RESEND_API_KEY;
 
     if (apiKey && apiKey !== "re_placeholder") {
@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error("Contact API error:", err);
     return NextResponse.json(
-      { error: "Something went wrong on our end. Please email directly at anjimarajvp239@gmail.com" },
+      { error: "Something went wrong on our end. Please email directly at anjimarajvp.official@gmail.com" },
       { status: 500 }
     );
   }

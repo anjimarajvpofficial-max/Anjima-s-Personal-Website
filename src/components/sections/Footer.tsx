@@ -31,8 +31,8 @@ export default function Footer() {
         <div className="flex flex-col gap-1 items-start">
           <div className="opacity-50 mb-4">Direct Signal //</div>
           <MagneticButton className="block w-fit">
-            <a href="mailto:anjimarajvp239@gmail.com" className="block text-sm hover:text-accent transition-colors mb-3 normal-case tracking-normal font-mono">
-              anjimarajvp239@gmail.com
+            <a href="mailto:anjimarajvp.official@gmail.com" className="block text-sm hover:text-accent transition-colors mb-3 normal-case tracking-normal font-mono">
+              anjimarajvp.official@gmail.com
             </a>
           </MagneticButton>
           <MagneticButton className="block w-fit">
