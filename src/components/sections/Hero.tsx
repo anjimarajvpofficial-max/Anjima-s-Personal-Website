@@ -48,7 +48,9 @@ export default function Hero({ cmsData }: { cmsData?: any }) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   
-  const titleText = "ANJIMA";
+  const titleText = cmsData?.title || "ANJIMA";
+  const subtitleText = cmsData?.subtitle || "ON AIR";
+  
   const textX = useTransform(springX, (val) => -val * 0.3);
   const textY = useTransform(springY, (val) => -val * 0.3);
 
@@ -82,7 +84,7 @@ export default function Hero({ cmsData }: { cmsData?: any }) {
         
         <motion.div style={{ scale, y, opacity, filter, x: textX }} className="w-full text-center z-10 pointer-events-auto">
           <h1 className="text-[18vw] leading-[0.75] font-display font-bold tracking-tighter uppercase flex justify-center overflow-hidden">
-            <span className="sr-only">Anjima Raj — Digital Marketer, Content Creator & Presenter</span>
+            <span className="sr-only">{titleText} — Digital Marketer, Content Creator & Presenter</span>
             {titleText.split("").map((letter, i) => (
               <motion.span
                 key={i}
@@ -104,7 +106,7 @@ export default function Hero({ cmsData }: { cmsData?: any }) {
             transition={{ duration: 1, delay: 0.5, ease: [0.19, 1, 0.22, 1] }}
             className="text-[12vw] leading-[0.8] font-display tracking-tighter uppercase text-accent italic pr-8 md:pr-24 mt-4"
           >
-            <GlitchText text="ON AIR" />
+            <GlitchText text={subtitleText} />
           </motion.div>
         </motion.div>
 
