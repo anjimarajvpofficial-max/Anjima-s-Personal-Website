@@ -4,9 +4,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import DecryptText from "@/components/ui/DecryptText";
 
-const words = ["Helping", "brands", "communicate", "better."];
+
 
 export default function Statement({ cmsData }: { cmsData?: any }) {
+  const words = (cmsData?.text || "Helping brands communicate better.").split(" ");
+  const labelText = cmsData?.label || "CORE PHILOSOPHY";
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
@@ -30,7 +32,7 @@ export default function Statement({ cmsData }: { cmsData?: any }) {
           className="font-mono text-[10px] tracking-[0.2em] opacity-40 uppercase mb-12 flex items-center gap-4"
         >
           <span className="w-8 h-[1px] bg-accent inline-block" />
-          <DecryptText text="CORE PHILOSOPHY" delay={300} speed={20} />
+          <DecryptText text={labelText} delay={300} speed={20} />
         </motion.div>
 
         {/* Word-by-word animated headline */}

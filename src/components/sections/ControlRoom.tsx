@@ -112,7 +112,7 @@ export default function ControlRoom({ cmsData }: { cmsData?: any }) {
   
   const xMarquee = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
-  const skills = [
+  const skills = cmsData?.skills?.length > 0 ? cmsData.skills : [
     { skill: "VIDEO PRESENTATION", status: "LIVE", code: "V.PRS_01", desc: "Expertise in front-of-camera performance, ensuring clear, engaging, and highly professional delivery for brand messaging and corporate communications." },
     { skill: "CONTENT CREATION", status: "ACTIVE", code: "C.CRT_02", desc: "End-to-end production of digital assets, balancing aesthetic appeal with algorithmic optimization to maximize reach." },
     { skill: "CONTENT WRITING", status: "ACTIVE", code: "C.WRT_03", desc: "Crafting compelling narratives, from video scripts to editorial pieces, prioritizing storytelling and audience retention." },

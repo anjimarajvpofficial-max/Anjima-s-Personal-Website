@@ -4,36 +4,18 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 
-const timeline = [
-  { year: "2024 — Present", role: "Founder (Self-Employed)", org: "Turtle Pi Advertising", desc: "Run an independent agency specializing in video production and social media management." },
-  { year: "2024", role: "Social Media Manager / Presenter", org: "MarketLube", desc: "Crafting and executing comprehensive social media strategies to enhance brand presence, engagement, and customer acquisition." },
-  { year: "2021 — 2024", role: "Content Creator", org: "Iluzia Lab", desc: "Proven track record of boosting brand visibility and audience engagement through innovative strategies." },
-];
+const defaultTimeline = [ { year: "2024 — Present", role: "Founder (Self-Employed)", org: "Turtle Pi Advertising", desc: "Run an independent agency specializing in video production and social media management." }, { year: "2024", role: "Social Media Manager / Presenter", org: "MarketLube", desc: "Crafting and executing comprehensive social media strategies to enhance brand presence, engagement, and customer acquisition." }, { year: "2021 — 2024", role: "Content Creator", org: "Iluzia Lab", desc: "Proven track record of boosting brand visibility and audience engagement through innovative strategies." } ];
 
-const education = [
-  {
-    degree: "Postgraduate Studies in Physics (Grade A+)",
-    institution: "MES Ponnani College",
-    year: "2019 — 2021",
-    desc: "Completed postgraduate studies in Physics with an overall grade of A+."
-  },
-  {
-    degree: "Undergraduate Studies in Physics (Grade A)",
-    institution: "MES Mampad College",
-    year: "2016 — 2019",
-    desc: "Completed undergraduate studies in Physics with an overall grade of A."
-  }
-];
+const defaultEducation = [ { degree: "Postgraduate Studies in Physics (Grade A+)", institution: "MES Ponnani College", year: "2019 — 2021", desc: "Completed postgraduate studies in Physics with an overall grade of A+." }, { degree: "Undergraduate Studies in Physics (Grade A)", institution: "MES Mampad College", year: "2016 — 2019", desc: "Completed undergraduate studies in Physics with an overall grade of A." } ];
 
-const achievements = [
-  "[PLACEHOLDER: Verified achievement or recognition]",
-  "[PLACEHOLDER: Verified achievement or recognition]",
-  "[PLACEHOLDER: Verified achievement or recognition]",
-];
+const defaultAchievements = [ "[PLACEHOLDER: Verified achievement or recognition]", "[PLACEHOLDER: Verified achievement or recognition]", "[PLACEHOLDER: Verified achievement or recognition]" ];
 
 type Tab = "journey" | "education" | "achievements";
 
 export default function About({ cmsData }: { cmsData?: any }) {
+  const timeline = cmsData?.timeline?.length > 0 ? cmsData.timeline : defaultTimeline;
+  const education = cmsData?.education?.length > 0 ? cmsData.education : defaultEducation;
+  const achievements = cmsData?.achievements?.length > 0 ? cmsData.achievements : defaultAchievements;
   const [activeTab, setActiveTab] = useState<Tab>("journey");
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });

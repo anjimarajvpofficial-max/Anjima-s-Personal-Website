@@ -1,11 +1,9 @@
-import { defineField, defineType } from 'sanity'
 
+import { defineField, defineType } from 'sanity'
 export const formulaSectionType = defineType({
-  name: 'formulaSection',
-  title: 'Formula Section',
-  type: 'object',
+  name: 'formulaSection', title: 'Formula Section', type: 'object',
   fields: [
-    defineField({ name: 'title', title: 'Title', type: 'string' }),
-    defineField({ name: 'content', title: 'Content', type: 'text' }),
+    defineField({ name: 'words', title: 'Words (Marquee)', type: 'array', of: [{ type: 'string' }] }),
+    defineField({ name: 'label', title: 'Label', type: 'string' })
   ]
 })

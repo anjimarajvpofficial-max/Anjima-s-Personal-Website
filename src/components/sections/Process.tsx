@@ -17,7 +17,7 @@ export default function Process({ cmsData }: { cmsData?: any }) {
   const x = useTransform(springX, [-0.5, 0.5], ["-2%", "2%"]);
   const y = useTransform(springY, [-0.5, 0.5], ["-2%", "2%"]);
 
-  const steps = [
+  const steps = cmsData?.steps?.length > 0 ? cmsData.steps.map((s: any) => ({ name: s.name, img: s.image?.asset?.url || "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1600" })) : [
     { name: "IDEA", img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1600" },
     { name: "SCRIPT", img: "https://images.unsplash.com/photo-1455390582262-044cdead27d8?q=80&w=1600" },
     { name: "SHOOT", img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1600" },
@@ -25,6 +25,8 @@ export default function Process({ cmsData }: { cmsData?: any }) {
     { name: "EDIT", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600" },
     { name: "PUBLISH", img: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1600" },
   ];
+  const labelText = cmsData?.label || "METHODOLOGY";
+  const titleText = cmsData?.title || "SYSTEM ARCHITECTURE";
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const { clientX, clientY } = e;

@@ -1,10 +1,8 @@
 import { defineField, defineType } from 'sanity'
-
 export const statementSectionType = defineType({
-  name: 'statementSection',
-  title: 'Statement Section',
-  type: 'object',
+  name: 'statementSection', title: 'Statement Section', type: 'object',
   fields: [
-    defineField({ name: 'text', title: 'Statement Text', type: 'text' }),
+    defineField({ name: 'label', title: 'Label', type: 'string' }),
+    defineField({ name: 'text', title: 'Text', type: 'text' })
   ]
 })
