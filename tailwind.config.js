@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#050505",
-        paper: "#f4f4f0",
-        accent: "var(--accent, #ff0050)", // Dynamic theme variable
-        "ink-light": "#1a1a1a",
-        "paper-dim": "#e0e0dc",
+        ink: "var(--color-ink, #050505)",
+        paper: "var(--color-paper, #f4f4f0)",
+        accent: "var(--accent, #ff0050)",
+        "ink-light": "var(--color-ink-light, #1a1a1a)",
+        "paper-dim": "var(--color-paper-dim, #e0e0dc)",
       },
       fontFamily: {
         display: ["Geist", "sans-serif"],

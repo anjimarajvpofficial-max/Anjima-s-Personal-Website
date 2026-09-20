@@ -8,7 +8,7 @@ import DecryptText from "@/components/ui/DecryptText";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ cmsData }: { cmsData?: any }) {
   return (
     <section id="footer" className="relative z-20 bg-ink min-h-screen flex flex-col justify-between pt-32 md:pt-40 border-t border-paper/10">
       

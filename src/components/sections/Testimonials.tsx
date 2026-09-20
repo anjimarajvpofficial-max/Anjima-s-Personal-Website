@@ -4,28 +4,38 @@ import { motion, AnimatePresence, useInView, useSpring, useTransform, useMotionV
 import { useState, useRef, useEffect } from "react";
 import DecryptText from "@/components/ui/DecryptText";
 
-const testimonials = [
-  {
-    quote: "Anjima Raj has a rare ability to combine strategic thinking with creative execution. She doesn't just create content — she builds narratives that genuinely connect with audiences.",
-    name: "[PLACEHOLDER: CLIENT NAME]",
-    role: "[PLACEHOLDER: ROLE]",
-    org: "[PLACEHOLDER: ORGANISATION]",
-  },
-  {
-    quote: "Working with Anjima Raj transformed how we communicated our brand online. Her understanding of digital platforms and audience psychology is exceptional.",
-    name: "[PLACEHOLDER: CLIENT NAME]",
-    role: "[PLACEHOLDER: ROLE]",
-    org: "[PLACEHOLDER: ORGANISATION]",
-  },
-  {
-    quote: "The level of professionalism and creative vision Anjima Raj brings to every project is outstanding. She elevated our entire marketing presence.",
-    name: "[PLACEHOLDER: CLIENT NAME]",
-    role: "[PLACEHOLDER: ROLE]",
-    org: "[PLACEHOLDER: ORGANISATION]",
-  },
-];
+interface Testimonial {
+  _id: string;
+  quote: string;
+  name: string;
+  role: string;
+  org: string;
+}
 
-export default function Testimonials() {
+export default function Testimonials({ cmsData, data = [] }: { cmsData?: any; data?: Testimonial[] }) {
+  const testimonials = data.length > 0 ? data : [
+    {
+      _id: "1",
+      quote: "Anjima Raj has a rare ability to combine strategic thinking with creative execution. She doesn't just create content — she builds narratives that genuinely connect with audiences.",
+      name: "[PLACEHOLDER: CLIENT NAME]",
+      role: "[PLACEHOLDER: ROLE]",
+      org: "[PLACEHOLDER: ORGANISATION]",
+    },
+    {
+      _id: "2",
+      quote: "Working with Anjima Raj transformed how we communicated our brand online. Her understanding of digital platforms and audience psychology is exceptional.",
+      name: "[PLACEHOLDER: CLIENT NAME]",
+      role: "[PLACEHOLDER: ROLE]",
+      org: "[PLACEHOLDER: ORGANISATION]",
+    },
+    {
+      _id: "3",
+      quote: "The level of professionalism and creative vision Anjima Raj brings to every project is outstanding. She elevated our entire marketing presence.",
+      name: "[PLACEHOLDER: CLIENT NAME]",
+      role: "[PLACEHOLDER: ROLE]",
+      org: "[PLACEHOLDER: ORGANISATION]",
+    },
+  ];
   const [active, setActive] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

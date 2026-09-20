@@ -9,7 +9,7 @@ import MagneticButton from "@/components/ui/MagneticButton";
 import CyberGrid from "@/components/ui/CyberGrid";
 import MagneticLetter from "@/components/ui/MagneticLetter";
 
-export default function Hero() {
+export default function Hero({ cmsData }: { cmsData?: any }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 

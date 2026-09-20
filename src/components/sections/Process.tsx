@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useState } from "react";
 
-export default function Process() {
+export default function Process({ cmsData }: { cmsData?: any }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   // Parallax setup

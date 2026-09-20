@@ -6,7 +6,7 @@ import DecryptText from "@/components/ui/DecryptText";
 
 const words = ["Helping", "brands", "communicate", "better."];
 
-export default function Statement() {
+export default function Statement({ cmsData }: { cmsData?: any }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 

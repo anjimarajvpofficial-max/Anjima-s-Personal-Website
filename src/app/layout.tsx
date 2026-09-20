@@ -1,97 +1,104 @@
-import type { Metadata } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 import './globals.compiled.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/ui/CustomCursor';
 import SiteNav from '@/components/ui/SiteNav';
 import GlobalSpotlight from '@/components/ui/GlobalSpotlight';
+import { client } from '@/sanity/client';
+import CookieBanner from '@/components/ui/CookieBanner';
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || 'https://anjimaraj.com'),
-  title: {
-    default: 'Anjima Raj — Marketing · Media · Creativity',
-    template: '%s | Anjima Raj',
-  },
-  description: 'Helping brands communicate better through marketing, media and creativity. Strategic storytelling, digital campaigns, social media, AI marketing, and creative production.',
-  keywords: ['Digital Marketing', 'Marketing Strategy', 'Social Media', 'Content Marketing', 'AI Marketing', 'Creative Production', 'Brand Marketing', 'Anjima Raj'],
-  authors: [{ name: 'Anjima Raj' }],
-  creator: 'Anjima Raj',
-  openGraph: {
-    type: 'website',
-    locale: 'en_IN',
-    url: process.env.SITE_URL || 'https://anjimaraj.com',
-    siteName: 'Anjima Raj',
-    title: 'Anjima Raj — Marketing · Media · Creativity',
-    description: 'Helping brands communicate better through marketing, media and creativity.',
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Anjima Raj — Marketing · Media · Creativity',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Anjima Raj — Marketing · Media · Creativity',
-    description: 'Helping brands communicate better through marketing, media and creativity.',
-    images: ['/images/og-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata(): Promise<Metadata> {
+  let seoData = null;
+  try {
+    seoData = await client.fetch(`*[_type == "globalSeo"][0]{
+      siteTitle,
+      siteDescription,
+      "ogImageUrl": ogImage.asset->url,
+      keywords
+    }`);
+  } catch (e) {
+    console.error("Sanity fetch failed for SEO.", e);
+  }
+
+  const title = seoData?.siteTitle || 'Anjima Raj — Marketing · Media · Creativity';
+  const description = seoData?.siteDescription || 'Helping brands communicate better through marketing, media and creativity.';
+  
+  return {
+    metadataBase: new URL(process.env.SITE_URL || 'https://anjimaraj.com'),
+    title: {
+      default: title,
+      template: `%s | ${title}`,
+    },
+    description: description,
+    keywords: seoData?.keywords || ['Digital Marketing', 'Marketing Strategy', 'Social Media', 'Content Marketing', 'AI Marketing', 'Creative Production', 'Brand Marketing'],
+    authors: [{ name: 'Anjima Raj' }],
+    creator: 'Anjima Raj',
+    openGraph: {
+      type: 'website',
+      locale: 'en_IN',
+      url: process.env.SITE_URL || 'https://anjimaraj.com',
+      siteName: title,
+      title: title,
+      description: description,
+      images: [
+        {
+          url: seoData?.ogImageUrl || '/images/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: [seoData?.ogImageUrl || '/images/og-image.jpg'],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+      },
     },
-  },
-};
+  };
+}
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Anjima Raj',
   jobTitle: 'Marketing & Creative Professional',
-  description: 'Helping brands communicate better through marketing, media and creativity.',
   url: process.env.SITE_URL || 'https://anjimaraj.com',
   sameAs: [
     'https://instagram.com/ima.janlie',
     'https://youtube.com/@anjima',
   ],
-  worksFor: [
-    {
-      '@type': 'Organization',
-      name: 'Turtle Pi'
-    }
-  ],
-  alumniOf: [
-    {
-      '@type': 'Organization',
-      name: 'MarketLube'
-    },
-    {
-      '@type': 'Organization',
-      name: 'Iluzia Lab'
-    }
-  ],
-  knowsAbout: [
-    'Digital Marketing',
-    'Marketing Strategy',
-    'Social Media Marketing',
-    'Content Marketing',
-    'AI Marketing',
-    'Creative Production',
-    'Brand Marketing',
-    'Video Production',
-  ],
 };
 
-import CookieBanner from '@/components/ui/CookieBanner';
-import Spotlight from '@/components/ui/Spotlight';
-import GlobalNoise from '@/components/ui/GlobalNoise';
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  let theme = null;
+  try {
+    theme = await client.fetch(`*[_type == "globalTheme"][0]{ colors }`);
+  } catch (e) {
+    console.error("Sanity fetch failed for theme.", e);
+  }
+  
+  // Set up CSS variables based on CMS theme, fallback to defaults
+  const colors = theme?.colors || {};
+  const themeVars = `
+    :root {
+      --color-ink: ${colors.ink || '#050505'};
+      --color-paper: ${colors.paper || '#f4f4f0'};
+      --accent: ${colors.accent || '#ff0050'};
+      --color-ink-light: ${colors.inkLight || '#1a1a1a'};
+      --color-paper-dim: ${colors.paperDim || '#e0e0dc'};
+    }
+  `;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -103,13 +110,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <style dangerouslySetInnerHTML={{ __html: themeVars }} />
       </head>
       <body>
         <SmoothScroll>
           <SiteNav />
           <CustomCursor />
           <GlobalSpotlight />
-                    {children}
+          {children}
           <CookieBanner />
         </SmoothScroll>
       </body>

@@ -63,7 +63,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   );
 }
 
-export default function Formula() {
+export default function Formula({ cmsData }: { cmsData?: any }) {
   const words = ["CURIOSITY", "+", "STORY", "+", "CAMERA", "+", "STRATEGY", "=", "CONNECTION", "//"];
   const marqueeText = words.join(" ");
 

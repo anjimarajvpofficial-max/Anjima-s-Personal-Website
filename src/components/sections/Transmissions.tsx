@@ -6,7 +6,15 @@ import { useCursor } from "@/components/ui/CustomCursor";
 import { useCyberSound } from "@/lib/useCyberSound";
 import GlitchText from "@/components/ui/GlitchText";
 
-export default function Transmissions() {
+interface Project {
+  id: string; // Document ID
+  title: string;
+  category: string;
+  metric: string;
+  youtubeId: string;
+}
+
+export default function Transmissions({ cmsData, data = [] }: { cmsData?: any; data?: Project[] }) {
   const targetRef = useRef<HTMLDivElement>(null);
   const { setVariant, setText } = useCursor();
   const { playHoverBlip, playClickThud } = useCyberSound();
@@ -17,13 +25,13 @@ export default function Transmissions() {
     offset: ["start start", "end end"]
   });
   
-  const shorts = [
-    { id: "Z9QNH7goiQM", title: "Creative Direction", category: "Commercial Campaign", metric: "2.4M+ Impressions" },
-    { id: "-3jb0t13N54", title: "Brand Narrative", category: "Digital Storytelling", metric: "High Engagement" },
-    { id: "dtZvK-8fNcQ", title: "Product Launch", category: "Social Strategy", metric: "Key Performance" },
-    { id: "2YsGt8mNxyA", title: "Editorial Piece", category: "Brand Identity", metric: "Viral Reach" },
-    { id: "sQvhrRsMC8A", title: "Visual Campaign", category: "Content Creation", metric: "Global Audience" },
-    { id: "N11yuKp9ADk", title: "Strategic Vision", category: "Creative Media", metric: "Targeted Impact" },
+  const shorts = data.length > 0 ? data : [
+    { id: "1", title: "Creative Direction", category: "Commercial Campaign", metric: "2.4M+ Impressions", youtubeId: "Z9QNH7goiQM" },
+    { id: "2", title: "Brand Narrative", category: "Digital Storytelling", metric: "High Engagement", youtubeId: "-3jb0t13N54" },
+    { id: "3", title: "Product Launch", category: "Social Strategy", metric: "Key Performance", youtubeId: "dtZvK-8fNcQ" },
+    { id: "4", title: "Editorial Piece", category: "Brand Identity", metric: "Viral Reach", youtubeId: "2YsGt8mNxyA" },
+    { id: "5", title: "Visual Campaign", category: "Content Creation", metric: "Global Audience", youtubeId: "sQvhrRsMC8A" },
+    { id: "6", title: "Strategic Vision", category: "Creative Media", metric: "Targeted Impact", youtubeId: "N11yuKp9ADk" },
   ];
   
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-83.33%"]);
@@ -86,7 +94,7 @@ export default function Transmissions() {
               
               {/* Premium Image Container */}
               <button 
-                onClick={() => { setActiveVideo(item.id); playClickThud(); }}
+                onClick={() => { setActiveVideo(item.youtubeId); playClickThud(); }}
                 onMouseEnter={() => { setVariant("text"); setText("PLAY"); playHoverBlip(); }}
                 onMouseLeave={() => { setVariant("default"); setText(""); }}
                 className="w-[80vw] md:w-auto h-auto md:h-[75vh] aspect-[9/16] relative group overflow-hidden bg-ink-light rounded-sm shadow-2xl"
@@ -96,7 +104,7 @@ export default function Transmissions() {
                    initial={{ scale: 1.05 }}
                    whileHover={{ scale: 1 }}
                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                   src={`https://img.youtube.com/vi/${item.id}/hqdefault.jpg`} 
+                   src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`} 
                    alt={item.title}
                    className="absolute inset-0 w-full h-full object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                  />

@@ -100,7 +100,7 @@ const TiltCard = ({ skill, onClick }: { skill: any, onClick: () => void }) => {
   );
 };
 
-export default function ControlRoom() {
+export default function ControlRoom({ cmsData }: { cmsData?: any }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { setVariant, setText } = useCursor();
   const [selectedSkill, setSelectedSkill] = useState<any>(null);

@@ -33,7 +33,7 @@ const achievements = [
 
 type Tab = "journey" | "education" | "achievements";
 
-export default function About() {
+export default function About({ cmsData }: { cmsData?: any }) {
   const [activeTab, setActiveTab] = useState<Tab>("journey");
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });

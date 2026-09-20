@@ -6,70 +6,78 @@ import { useCursor } from "@/components/ui/CustomCursor";
 import DecryptText from "@/components/ui/DecryptText";
 import MagneticButton from "@/components/ui/MagneticButton";
 
-const services = [
-  { 
-    num: "01", 
-    title: "Video Presenting & Hosting", 
-    desc: "Confident, camera-ready presenting for brand videos, product explainers, UGC and ads.", 
-    tags: ["On-Camera", "UGC", "Hosting"],
-    img: "https://images.unsplash.com/photo-1516280440502-6c361e2b5e0c?q=80&w=600"
-  },
-  { 
-    num: "02", 
-    title: "Video Production", 
-    desc: "End-to-end video creation — scripting, shooting, editing, and final delivery.", 
-    tags: ["Cinematography", "Editing", "Production"],
-    img: "https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=600"
-  },
-  { 
-    num: "03", 
-    title: "Content Creation", 
-    desc: "Short-form video content tailored for Instagram, Reels, TikTok, and YouTube Shorts.", 
-    tags: ["Short-Form", "Reels", "TikTok"],
-    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600"
-  },
-  { 
-    num: "04", 
-    title: "Social Media Management", 
-    desc: "Planning, posting, and managing brand presence and community across platforms.", 
-    tags: ["Community", "Strategy", "Management"],
-    img: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=600"
-  },
-  { 
-    num: "05", 
-    title: "Digital Marketing", 
-    desc: "Content strategy, campaign support, and integrated marketing for brand growth.", 
-    tags: ["Strategy", "Campaigns", "Growth"],
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600"
-  },
-  { 
-    num: "06", 
-    title: "SEO Content Writing", 
-    desc: "Keyword-optimized blog articles, website copywriting, and digital web content.", 
-    tags: ["Copywriting", "SEO", "Blogs"],
-    img: "https://images.unsplash.com/photo-1455390582262-044cdead27d8?q=80&w=600"
-  },
-  { 
-    num: "07", 
-    title: "Script Writing", 
-    desc: "Engaging and high-retention scripts for social media campaigns and video ads.", 
-    tags: ["Scripts", "Ads", "Retention"],
-    img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600"
-  },
-  { 
-    num: "08", 
-    title: "Team Coordination", 
-    desc: "Assembling and managing a freelance crew for larger scale video projects.", 
-    tags: ["Management", "Crew", "Logistics"],
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600"
-  }
-];
+interface Service {
+  _id: string;
+  num: string;
+  title: string;
+  desc: string;
+  tags: string[];
+}
 
-export default function Services() {
+export default function Services({ cmsData, data = [] }: { cmsData?: any; data?: Service[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
   const { setVariant, setText } = useCursor();
+
+  const servicesData = data.length > 0 ? data : [
+    { 
+      _id: "1",
+      num: "01", 
+      title: "Video Presenting & Hosting", 
+      desc: "Confident, camera-ready presenting for brand videos, product explainers, UGC and ads.", 
+      tags: ["On-Camera", "UGC", "Hosting"]
+    },
+    { 
+      _id: "2",
+      num: "02", 
+      title: "Video Production", 
+      desc: "End-to-end video creation — scripting, shooting, editing, and final delivery.", 
+      tags: ["Cinematography", "Editing", "Production"]
+    },
+    { 
+      _id: "3",
+      num: "03", 
+      title: "Content Creation", 
+      desc: "Short-form video content tailored for Instagram, Reels, TikTok, and YouTube Shorts.", 
+      tags: ["Short-Form", "Reels", "TikTok"]
+    },
+    { 
+      _id: "4",
+      num: "04", 
+      title: "Social Media Management", 
+      desc: "Planning, posting, and managing brand presence and community across platforms.", 
+      tags: ["Community", "Strategy", "Management"]
+    },
+    { 
+      _id: "5",
+      num: "05", 
+      title: "Digital Marketing", 
+      desc: "Content strategy, campaign support, and integrated marketing for brand growth.", 
+      tags: ["Strategy", "Campaigns", "Growth"]
+    },
+    { 
+      _id: "6",
+      num: "06", 
+      title: "SEO Content Writing", 
+      desc: "Keyword-optimized blog articles, website copywriting, and digital web content.", 
+      tags: ["Copywriting", "SEO", "Blogs"]
+    },
+    { 
+      _id: "7",
+      num: "07", 
+      title: "Script Writing", 
+      desc: "Engaging and high-retention scripts for social media campaigns and video ads.", 
+      tags: ["Scripts", "Ads", "Retention"]
+    },
+    { 
+      _id: "8",
+      num: "08", 
+      title: "Team Coordination", 
+      desc: "Assembling and managing a freelance crew for larger scale video projects.", 
+      tags: ["Management", "Crew", "Logistics"]
+    }
+  ];
 
   /* Floating Image Physics */
   const mouseX = useMotionValue(0);
@@ -129,7 +137,7 @@ export default function Services() {
       </div>
 
       <div className="relative">
-        {services.map((s, i) => (
+        {servicesData.map((s, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 24 }}

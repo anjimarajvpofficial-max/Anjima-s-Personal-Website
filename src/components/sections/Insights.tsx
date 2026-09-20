@@ -5,42 +5,55 @@ import { useRef } from "react";
 import GlareCard from "@/components/ui/GlareCard";
 import DecryptText from "@/components/ui/DecryptText";
 
-const insights = [
-  {
-    num: "01",
-    category: "AI & Technology",
-    title: "How AI is Reshaping the Marketing Landscape in 2026",
-    excerpt: "From content generation to hyper-personalised campaigns, AI is no longer a future concept — it is the present competitive advantage.",
-    readTime: "5 min read",
-    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
-  },
-  {
-    num: "02",
-    category: "Marketing Strategy",
-    title: "Why Brand Storytelling Still Wins in a Data-First World",
-    excerpt: "Metrics matter. But the brands that endure are the ones that made you feel something first.",
-    readTime: "4 min read",
-    img: "https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=800",
-  },
-  {
-    num: "03",
-    category: "Media & Creativity",
-    title: "Short-Form Video: The Architecture of Attention",
-    excerpt: "The first 1.5 seconds decide everything. A breakdown of what makes short-form content genuinely work.",
-    readTime: "6 min read",
-    img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800",
-  },
-  {
-    num: "04",
-    category: "Professional Experience",
-    title: "Lessons From the Field: What Marketing School Doesn't Teach You",
-    excerpt: "The real curriculum of professional marketing is written in client meetings, failed campaigns, and unexpected wins.",
-    readTime: "7 min read",
-    img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800",
-  },
-];
+interface Insight {
+  _id: string;
+  num: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  readTime: string;
+  img: string; // resolved image URL
+}
 
-export default function Insights() {
+export default function Insights({ cmsData, data = [] }: { cmsData?: any; data?: Insight[] }) {
+  const insights = data.length > 0 ? data : [
+    {
+      _id: "1",
+      num: "01",
+      category: "AI & Technology",
+      title: "How AI is Reshaping the Marketing Landscape in 2026",
+      excerpt: "From content generation to hyper-personalised campaigns, AI is no longer a future concept — it is the present competitive advantage.",
+      readTime: "5 min read",
+      img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
+    },
+    {
+      _id: "2",
+      num: "02",
+      category: "Marketing Strategy",
+      title: "Why Brand Storytelling Still Wins in a Data-First World",
+      excerpt: "Metrics matter. But the brands that endure are the ones that made you feel something first.",
+      readTime: "4 min read",
+      img: "https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=800",
+    },
+    {
+      _id: "3",
+      num: "03",
+      category: "Media & Creativity",
+      title: "Short-Form Video: The Architecture of Attention",
+      excerpt: "The first 1.5 seconds decide everything. A breakdown of what makes short-form content genuinely work.",
+      readTime: "6 min read",
+      img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800",
+    },
+    {
+      _id: "4",
+      num: "04",
+      category: "Professional Experience",
+      title: "Lessons From the Field: What Marketing School Doesn't Teach You",
+      excerpt: "The real curriculum of professional marketing is written in client meetings, failed campaigns, and unexpected wins.",
+      readTime: "7 min read",
+      img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800",
+    },
+  ];
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
 
@@ -82,15 +95,16 @@ export default function Insights() {
       </div>
 
       {/* Featured + Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-0 border-t border-paper/10">
-        
-        {/* Featured article */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="md:col-span-7 border-b border-paper/10 md:border-r p-0 "
-        >
+      {insights.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 border-t border-paper/10">
+          
+          {/* Featured article */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="md:col-span-7 border-b border-paper/10 md:border-r p-0 "
+          >
           <GlareCard className="h-full">
             <div className="overflow-hidden">
               <motion.img loading="lazy"
@@ -150,6 +164,7 @@ export default function Insights() {
           ))}
         </div>
       </div>
+      )}
 
     </section>
   );
