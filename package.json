@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "predev": "npx tailwindcss -i src/app/(site)/globals.css -o src/app/(site)/globals.compiled.css",
-    "prebuild": "npx tailwindcss -i src/app/(site)/globals.css -o src/app/(site)/globals.compiled.css"
+    "predev": "npx tailwindcss -i 'src/app/(site)/globals.css' -o 'src/app/(site)/globals.compiled.css'",
+    "prebuild": "npx tailwindcss -i 'src/app/(site)/globals.css' -o 'src/app/(site)/globals.compiled.css'"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +16,12 @@
   "dependencies": {
     "@portabletext/react": "^8.0.1",
     "@sanity/image-url": "^2.1.1",
-    "@sanity/orderable-document-list": "^2.0.24",
+    "@sanity/orderable-document-list": "^1.2.2",
     "@sanity/vision": "^6.15.0",
     "@studio-freight/react-lenis": "^0.0.47",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
-    "lucide-react": "^1.47.0",
+    "lucide-react": "^1.33.0",
     "next": "^16.3.2",
     "next-sanity": "^13.3.4",
     "playwright": "^1.62.1",
