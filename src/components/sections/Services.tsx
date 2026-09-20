@@ -176,7 +176,7 @@ export default function Services({ cmsData, data = [] }: { cmsData?: any; data?:
             </p>
             
             <div className="flex flex-wrap gap-2 md:col-span-3 justify-start md:justify-end items-start z-10">
-              {s.tags.map((tag, t) => (
+              {(s.tags || []).map((tag, t) => (
                 <span key={t} className={`font-mono text-[9px] tracking-widest px-3 py-1 uppercase border border-transparent transition-all duration-300 ${hovered === i ? "text-ink border-ink/20" : ""}`}>
                   {tag}
                 </span>
