@@ -35,9 +35,9 @@ export default async function Home() {
   try {
     [page, projects, services, testimonials, insights] = await Promise.all([
       client.fetch(`*[_type == "page" && slug.current == "home"][0]`),
-      client.fetch(`*[_type == "project"] | order(orderRank asc)`),
-      client.fetch(`*[_type == "service"] | order(orderRank asc)`),
-      client.fetch(`*[_type == "testimonial"] | order(orderRank asc)`),
+      client.fetch(`*[_type == "project"] | order(orderRank asc) { _id, title, category, metric, youtubeId }`),
+      client.fetch(`*[_type == "service"] | order(orderRank asc) { _id, num, title, desc, tags }`),
+      client.fetch(`*[_type == "testimonial"] | order(orderRank asc) { _id, quote, name, role, org }`),
       client.fetch(`*[_type == "insight"] | order(publishedAt desc) {
         _id,
         num,
