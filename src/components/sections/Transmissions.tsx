@@ -131,12 +131,20 @@ export default function Transmissions({ cmsData, data = [] }: { cmsData?: any; d
               transition={{ duration: 0.5 }}
               className="fixed inset-0 z-[99999] bg-ink/95 backdrop-blur-xl flex flex-col items-center justify-center "
               onClick={() => { setActiveVideo(null); setVariant("default"); setText(""); }}
-              onMouseEnter={() => { setVariant("text"); setText("CLOSE"); }}
             >
-              {/* Modal Header */}
-              <div className="absolute top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center opacity-50 font-mono text-[10px] md:text-xs uppercase tracking-widest pointer-events-none">
-                <GlitchText text="SIGNAL ACQUIRED" />
-                <span>TERMINATE CONNECTION [X]</span>
+              {/* Modal Header & Close Button */}
+              <div className="absolute top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50">
+                <div className="opacity-50 font-mono text-[10px] md:text-xs uppercase tracking-widest pointer-events-none hidden md:block">
+                  <GlitchText text="SIGNAL ACQUIRED" />
+                </div>
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setActiveVideo(null); setVariant("default"); setText(""); }}
+                  onMouseEnter={() => { setVariant("text"); setText("CLOSE"); }}
+                  onMouseLeave={() => { setVariant("default"); setText(""); }}
+                  className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-accent border border-accent/50 px-4 py-2 hover:bg-accent hover:text-ink transition-colors ml-auto pointer-events-auto"
+                >
+                  TERMINATE CONNECTION [X]
+                </button>
               </div>
               
               <motion.div 
@@ -144,21 +152,19 @@ export default function Transmissions({ cmsData, data = [] }: { cmsData?: any; d
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="w-[90vw] md:w-[350px] aspect-[9/16] relative bg-ink-light rounded-sm shadow-[0_0_100px_rgba(255,0,80,0.2)] overflow-hidden"
+                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the video wrapper
+                className="w-[90vw] md:w-[350px] aspect-[9/16] relative bg-ink-light rounded-sm shadow-[0_0_100px_rgba(255,0,80,0.2)] overflow-hidden z-40 pointer-events-auto"
               >
                 <iframe
                   width="100%"
                   height="100%"
-                  src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=${activeVideo}`}
+                  src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1&controls=1&modestbranding=1&rel=0`}
                   title="Video transmission"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-                
-                {/* Custom Overlay to block iframe mouse capture so cursor still works */}
-                <div className="absolute inset-0 z-10 bg-transparent" />
               </motion.div>
             </motion.div>
           )}
