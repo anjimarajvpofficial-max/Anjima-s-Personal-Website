@@ -111,7 +111,7 @@ export default function About({ cmsData }: { cmsData?: any }) {
           {activeTab === "journey" && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="flex flex-col gap-0 border border-paper/10 bg-ink-light p-6 md:p-10">
               <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@anjima:~/career $ ls -l</div>
-              {timeline.map((item, i) => (
+              {timeline.map((item: any, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -16 }}
@@ -134,7 +134,7 @@ export default function About({ cmsData }: { cmsData?: any }) {
           {activeTab === "education" && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="flex flex-col gap-0 border border-paper/10 bg-ink-light p-6 md:p-10">
               <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@anjima:~/education $ cat credentials.txt</div>
-              {education.map((e, i) => (
+              {education.map((e: any, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -16 }}
@@ -153,7 +153,7 @@ export default function About({ cmsData }: { cmsData?: any }) {
           {activeTab === "achievements" && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="flex flex-col gap-0 border border-paper/10 bg-ink-light p-6 md:p-10">
                <div className="font-mono text-[10px] opacity-30 tracking-widest uppercase mb-8 border-b border-paper/10 pb-4">root@anjima:~/achievements $ ./execute</div>
-              {achievements.map((item, i) => (
+              {achievements.map((item: any, i: number) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -16 }}

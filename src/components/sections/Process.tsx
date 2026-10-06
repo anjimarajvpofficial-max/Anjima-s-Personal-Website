@@ -71,7 +71,7 @@ export default function Process({ cmsData }: { cmsData?: any }) {
       
       <div className="w-full md:w-1/2 flex flex-col gap-4 border-l border-paper/20 pl-8 relative z-10">
         <div className="font-mono text-xs tracking-widest text-accent mb-4">PRODUCTION PIPELINE //</div>
-        {steps.map((step, i) => (
+        {steps.map((step: any, i: number) => (
           <div 
             key={i} 
             onMouseEnter={() => setHoveredIndex(i)}

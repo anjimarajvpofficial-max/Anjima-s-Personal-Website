@@ -85,7 +85,7 @@ export default function Hero({ cmsData }: { cmsData?: any }) {
         <motion.div style={{ scale, y, opacity, filter, x: textX }} className="w-full text-center z-10 pointer-events-auto">
           <h1 className="text-[18vw] leading-[0.75] font-display font-bold tracking-tighter uppercase flex justify-center overflow-hidden">
             <span className="sr-only">{titleText} — Digital Marketer, Content Creator & Presenter</span>
-            {titleText.split("").map((letter, i) => (
+            {titleText.split("").map((letter: string, i: number) => (
               <motion.span
                 key={i}
                 aria-hidden="true"

@@ -37,7 +37,7 @@ export default function Statement({ cmsData }: { cmsData?: any }) {
 
         {/* Word-by-word animated headline */}
         <h2 className="text-[clamp(3rem,8vw,8rem)] font-display uppercase tracking-tight leading-[1.0]" aria-label="Helping brands communicate better.">
-          {words.map((word, i) => (
+          {words.map((word: string, i: number) => (
             <span key={i} className="inline-block overflow-hidden mr-[0.25em]" aria-hidden="true">
               <motion.span
                 className="inline-block"

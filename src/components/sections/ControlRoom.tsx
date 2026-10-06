@@ -143,7 +143,7 @@ export default function ControlRoom({ cmsData }: { cmsData?: any }) {
         </div>
         
         <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-1" style={{ perspective: "1000px" }}>
-          {skills.map((skill, i) => (
+          {skills.map((skill: any, i: number) => (
             <TiltCard key={i} skill={skill} onClick={() => setSelectedSkill(skill)} />
           ))}
         </div>

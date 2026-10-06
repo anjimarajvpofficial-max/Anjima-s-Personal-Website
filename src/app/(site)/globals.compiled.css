@@ -793,6 +793,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 30;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -912,6 +916,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .mr-10 {
